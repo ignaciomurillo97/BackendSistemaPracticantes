@@ -1,27 +1,55 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+var administratorRouter = require('./routes/administrator.js');
+var companyRouter = require('./routes/company.js');
+var coordinatorRouter = require('./routes/coordinator.js');
+var indexRouter = require('./routes/index.js');
+var loginRouter = require('./routes/login.js');
+var studentRouter = require('./routes/student.js');
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/administrator', administratorRouter);
+app.use('/company', companyRouter);
+app.use('/coordinator', coordinatorRouter);
+app.use('/login', loginRouter);
+app.use('/student', studentRouter);
 
+//Cors
+var corsOptions = {
+  origin: 'http://localhost:4200',
+  optionsSuccessStatus: 200,
+  credentials: true
+}
+// session
+app.set('trust proxy', 1);
+app.use(session({
+   secret: 'culpa de torres',
+   resave: true,
+   saveUninitialized: true,
+   cookie: { maxAge: 6000000 }
+}))
+
+app.use(cors(corsOptions));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({
+    extended: true,
+    limit: '50mb'
+}));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
