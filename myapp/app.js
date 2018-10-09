@@ -8,14 +8,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 
-var administratorRouter = require('./routes/administrator.js');
-var companyRouter = require('./routes/company.js');
-var coordinatorRouter = require('./routes/coordinator.js');
-var indexRouter = require('./routes/index.js');
-var sessionRouter = require('./routes/session.js');
-var studentRouter = require('./routes/student.js');
+let administratorRouter = require('./routes/administrator.js');
+let companyRouter = require('./routes/company.js');
+let coordinatorRouter = require('./routes/coordinator.js');
+let indexRouter = require('./routes/index.js');
+let loginRouter = require('./routes/login.js');
+let studentRouter = require('./routes/student.js');
 
-var app = express();
+let app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -30,7 +30,7 @@ app.use('/session', sessionRouter);
 app.use('/student', studentRouter);
 
 //Cors
-var corsOptions = {
+let corsOptions = {
   origin: 'http://localhost:4200',
   optionsSuccessStatus: 200,
   credentials: true
