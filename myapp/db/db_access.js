@@ -1,14 +1,14 @@
 const mysql = require('mysql');
 
-var db_config = {
+let db_config = {
    host: "localhost",
    user: "root",
    database: "SistemaPracticantes",
-   password: "trivago",
+   password: "root",
    multipleStatements: true
 };
 
-var pool = mysql.createPool(db_config);
+let pool = mysql.createPool(db_config);
 
 pool.getConnection(function(err, connection) {
    if (err){

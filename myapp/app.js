@@ -26,15 +26,16 @@ app.use('/', indexRouter);
 app.use('/administrator', administratorRouter);
 app.use('/company', companyRouter);
 app.use('/coordinator', coordinatorRouter);
-app.use('/session', sessionRouter);
+// app.use('/session', sessionRouter);
 app.use('/student', studentRouter);
+app.use('/login', loginRouter);
 
 //Cors
 let corsOptions = {
-  origin: 'http://localhost:4200',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200,
   credentials: true
-}
+};
 // session
 app.set('trust proxy', 1);
 app.use(session({
@@ -42,7 +43,7 @@ app.use(session({
    resave: true,
    saveUninitialized: true,
    cookie: { maxAge: 6000000 }
-}))
+}));
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json({limit: '50mb'}));
@@ -56,14 +57,14 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
+//
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.send('error');
+// });
 
 module.exports = app;

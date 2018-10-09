@@ -1,14 +1,9 @@
 const db_connection = require('./db_access.js');
 const User = require('../model/user.js');
 
-exports.autenticar = function (nombreUsuario, contrasena) {
-
-
-};
-
 class UserDB {
 
-    getUser(user){
+    auth(user){
         var query = `SELECT `+
             `u.NombreUsuario, `+
             `u.Contraseña, `+
@@ -23,9 +18,12 @@ class UserDB {
         return new Promise (function (resolve, reject) {
             db_connection.query(query, function (err, result, fields) {
                 if (err) reject(err);
-                console.log(result);
+                let rows = result.map((result) =>{
+                    let user = new User();
+                    //asignar valores de user, no tengo datos y me da pereza insertarlos jaja
+                });
 
-                resolve(result);
+                resolve(rows);
             });
         })
 
