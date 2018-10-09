@@ -12,7 +12,7 @@ var administratorRouter = require('./routes/administrator.js');
 var companyRouter = require('./routes/company.js');
 var coordinatorRouter = require('./routes/coordinator.js');
 var indexRouter = require('./routes/index.js');
-var loginRouter = require('./routes/login.js');
+var sessionRouter = require('./routes/session.js');
 var studentRouter = require('./routes/student.js');
 
 var app = express();
@@ -26,7 +26,7 @@ app.use('/', indexRouter);
 app.use('/administrator', administratorRouter);
 app.use('/company', companyRouter);
 app.use('/coordinator', coordinatorRouter);
-app.use('/login', loginRouter);
+app.use('/session', sessionRouter);
 app.use('/student', studentRouter);
 
 //Cors

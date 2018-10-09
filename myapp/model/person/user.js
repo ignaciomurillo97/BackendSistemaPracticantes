@@ -1,4 +1,4 @@
-const db_connection = require('./db_conection.js');
+const db_connection = require('../db_access.js');
 
 exports.autenticar = function (nombreUsuario, contrasena) {
    var query = `SELECT `+
@@ -18,5 +18,4 @@ exports.autenticar = function (nombreUsuario, contrasena) {
          resolve(result);
       });
    })
-
 };
