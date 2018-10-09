@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var user = require('../model/person/user.js')
+var user = require('../db/userDB.js')
 
 /* GET home page. */
 router.post ('/', function(req, res, next){
@@ -22,5 +22,7 @@ router.post ('/', function(req, res, next){
         res.send(loginObject);
     })
 });
+
+router.delete()
 
 module.exports = router;
