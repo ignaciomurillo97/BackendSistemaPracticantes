@@ -26,7 +26,7 @@ app.use('/', indexRouter);
 app.use('/administrator', administratorRouter);
 app.use('/company', companyRouter);
 app.use('/coordinator', coordinatorRouter);
-app.use('/login', loginRouter);
+app.use('/session', sessionRouter);
 app.use('/student', studentRouter);
 
 //Cors

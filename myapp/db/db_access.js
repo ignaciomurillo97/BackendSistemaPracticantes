@@ -4,8 +4,8 @@ var db_config = {
    host: "localhost",
    user: "root",
    database: "SistemaPracticantes",
-   password: "root",
-    multipleStatements: true
+   password: "trivago",
+   multipleStatements: true
 };
 
 var pool = mysql.createPool(db_config);
