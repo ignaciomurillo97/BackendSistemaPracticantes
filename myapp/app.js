@@ -16,6 +16,7 @@ let loginRouter = require('./routes/login.js');
 let studentRouter = require('./routes/student.js');
 
 let app = express();
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -30,12 +31,7 @@ app.use('/coordinator', coordinatorRouter);
 app.use('/student', studentRouter);
 app.use('/login', loginRouter);
 
-//Cors
-let corsOptions = {
-  origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200,
-  credentials: true
-};
+
 // session
 app.set('trust proxy', 1);
 app.use(session({
@@ -45,12 +41,12 @@ app.use(session({
    cookie: { maxAge: 6000000 }
 }));
 
-app.use(cors(corsOptions));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({
     extended: true,
     limit: '50mb'
 }));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
