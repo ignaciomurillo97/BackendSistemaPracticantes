@@ -1,8 +1,6 @@
 const db_connection = require('./db_access.js');
 
-class CoordinadoresDB {
-
-  selectCoordinadores(){
+module.exports.selectCoordinators = function (){
     var query = `SELECT ` +
       `Cedula, ` +
       `Nombre, ` +
@@ -23,6 +21,4 @@ class CoordinadoresDB {
       });
     })
   }
-}
 
-module.exports = CoordinadoresDB;
