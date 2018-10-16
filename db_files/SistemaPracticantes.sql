@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 09, 2018 at 08:05 PM
+-- Generation Time: Oct 15, 2018 at 05:46 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -28,11 +28,20 @@ SET time_zone = "+00:00";
 -- Table structure for table `Carrera`
 --
 
-CREATE TABLE `Carrera` (
-  `idCarrera` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Carrera` (
+  `idCarrera` int(11) NOT NULL AUTO_INCREMENT,
   `idEscuela` int(11) NOT NULL,
-  `NombreCarrera` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `NombreCarrera` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idCarrera`),
+  KEY `FK_ID_ESCUELA` (`idEscuela`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Carrera`
+--
+
+INSERT INTO `Carrera` (`idCarrera`, `idEscuela`, `NombreCarrera`) VALUES
+(1, 1, 'Ingenieria en Computacion');
 
 -- --------------------------------------------------------
 
@@ -40,9 +49,11 @@ CREATE TABLE `Carrera` (
 -- Table structure for table `CarrerasPorSede`
 --
 
-CREATE TABLE `CarrerasPorSede` (
+CREATE TABLE IF NOT EXISTS `CarrerasPorSede` (
   `idCarrera` int(11) NOT NULL,
-  `idSede` int(11) NOT NULL
+  `idSede` int(11) NOT NULL,
+  PRIMARY KEY (`idCarrera`,`idSede`),
+  KEY `FK_ID_SEDE` (`idSede`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -51,10 +62,11 @@ CREATE TABLE `CarrerasPorSede` (
 -- Table structure for table `CatalogoEvento`
 --
 
-CREATE TABLE `CatalogoEvento` (
-  `idTipoEvento` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `CatalogoEvento` (
+  `idTipoEvento` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `Descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idTipoEvento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -63,10 +75,19 @@ CREATE TABLE `CatalogoEvento` (
 -- Table structure for table `CatalogoGenero`
 --
 
-CREATE TABLE `CatalogoGenero` (
-  `idGenero` int(11) NOT NULL,
-  `Genero` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS `CatalogoGenero` (
+  `idGenero` int(11) NOT NULL AUTO_INCREMENT,
+  `Genero` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idGenero`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `CatalogoGenero`
+--
+
+INSERT INTO `CatalogoGenero` (`idGenero`, `Genero`) VALUES
+(1, 'Masculino'),
+(2, 'Femenino');
 
 -- --------------------------------------------------------
 
@@ -74,10 +95,13 @@ CREATE TABLE `CatalogoGenero` (
 -- Table structure for table `CoordinadorPractica`
 --
 
-CREATE TABLE `CoordinadorPractica` (
+CREATE TABLE IF NOT EXISTS `CoordinadorPractica` (
   `Cedula` int(11) NOT NULL,
   `idCarrera` int(11) NOT NULL,
-  `idSede` int(11) NOT NULL
+  `idSede` int(11) NOT NULL,
+  PRIMARY KEY (`Cedula`),
+  KEY `FK_CARRERA` (`idCarrera`),
+  KEY `FK_SEDE` (`idSede`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -86,11 +110,23 @@ CREATE TABLE `CoordinadorPractica` (
 -- Table structure for table `DireccionCorreoElectronico`
 --
 
-CREATE TABLE `DireccionCorreoElectronico` (
-  `idCorreoElectronico` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `DireccionCorreoElectronico` (
+  `idCorreoElectronico` int(11) NOT NULL AUTO_INCREMENT,
   `CorreoElectronico` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `idPersona` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `idPersona` int(11) NOT NULL,
+  PRIMARY KEY (`idCorreoElectronico`),
+  KEY `FK_CEDULA_PERSONA` (`idPersona`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `DireccionCorreoElectronico`
+--
+
+INSERT INTO `DireccionCorreoElectronico` (`idCorreoElectronico`, `CorreoElectronico`, `idPersona`) VALUES
+(24, 'correo1@servidor.com', 123443210),
+(25, 'correo2@servidor.com', 123443210),
+(26, 'correo3@servidor.com', 123443210),
+(27, 'correo4@servidor.com', 123443210);
 
 -- --------------------------------------------------------
 
@@ -98,11 +134,13 @@ CREATE TABLE `DireccionCorreoElectronico` (
 -- Table structure for table `Documento`
 --
 
-CREATE TABLE `Documento` (
+CREATE TABLE IF NOT EXISTS `Documento` (
   `NombreDocumento` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Dueno` int(11) NOT NULL,
   `FechaModificacion` datetime NOT NULL,
-  `idDocumento` int(11) NOT NULL
+  `idDocumento` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idDocumento`),
+  KEY `FK_DUENO_DOCUMENTO` (`Dueno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -111,11 +149,14 @@ CREATE TABLE `Documento` (
 -- Table structure for table `EmpresasPorCarreraYSede`
 --
 
-CREATE TABLE `EmpresasPorCarreraYSede` (
+CREATE TABLE IF NOT EXISTS `EmpresasPorCarreraYSede` (
   `Sede` int(11) NOT NULL,
   `Carrera` int(11) NOT NULL,
   `CedulaJuridicaEmpresa` int(11) NOT NULL,
-  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`Sede`,`Carrera`,`CedulaJuridicaEmpresa`),
+  KEY `FK_EPCS_EMPRESA` (`CedulaJuridicaEmpresa`),
+  KEY `FK_EPCS_CARRERA` (`Carrera`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -124,11 +165,20 @@ CREATE TABLE `EmpresasPorCarreraYSede` (
 -- Table structure for table `Escuela`
 --
 
-CREATE TABLE `Escuela` (
-  `IdEscuela` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Escuela` (
+  `IdEscuela` int(11) NOT NULL AUTO_INCREMENT,
   `IdUniversidad` int(11) NOT NULL,
-  `NombreEscuela` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `NombreEscuela` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`IdEscuela`),
+  KEY `FK_ESCUELA_UNIVERSIDAD` (`IdUniversidad`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Escuela`
+--
+
+INSERT INTO `Escuela` (`IdEscuela`, `IdUniversidad`, `NombreEscuela`) VALUES
+(1, 1, 'Ingenieria en Computacion');
 
 -- --------------------------------------------------------
 
@@ -136,9 +186,10 @@ CREATE TABLE `Escuela` (
 -- Table structure for table `EstadoEmpresa`
 --
 
-CREATE TABLE `EstadoEmpresa` (
-  `idEstado` int(11) NOT NULL,
-  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
+CREATE TABLE IF NOT EXISTS `EstadoEmpresa` (
+  `idEstado` int(11) NOT NULL AUTO_INCREMENT,
+  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idEstado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -147,10 +198,20 @@ CREATE TABLE `EstadoEmpresa` (
 -- Table structure for table `EstadoEstudiante`
 --
 
-CREATE TABLE `EstadoEstudiante` (
-  `idEstado` int(11) NOT NULL,
-  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS `EstadoEstudiante` (
+  `idEstado` int(11) NOT NULL AUTO_INCREMENT,
+  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idEstado`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `EstadoEstudiante`
+--
+
+INSERT INTO `EstadoEstudiante` (`idEstado`, `Estado`) VALUES
+(1, 'Pendiente'),
+(2, 'Aceptado'),
+(3, 'En Practica');
 
 -- --------------------------------------------------------
 
@@ -158,9 +219,10 @@ CREATE TABLE `EstadoEstudiante` (
 -- Table structure for table `EstadoFormularioCharla`
 --
 
-CREATE TABLE `EstadoFormularioCharla` (
-  `idEstado` int(11) NOT NULL,
-  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
+CREATE TABLE IF NOT EXISTS `EstadoFormularioCharla` (
+  `idEstado` int(11) NOT NULL AUTO_INCREMENT,
+  `Estado` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idEstado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -169,16 +231,30 @@ CREATE TABLE `EstadoFormularioCharla` (
 -- Table structure for table `Estudiante`
 --
 
-CREATE TABLE `Estudiante` (
-  `Cedula` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Estudiante` (
+  `Cedula` int(11) NOT NULL AUTO_INCREMENT,
   `Universidad` int(11) NOT NULL,
   `Escuela` int(11) NOT NULL,
   `Sede` int(11) NOT NULL,
   `Carrera` int(11) NOT NULL,
-  `Carne` int(11) NOT NULL,
+  `Carne` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Estado` int(11) NOT NULL,
-  `Semestre` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `Semestre` int(11) NOT NULL,
+  PRIMARY KEY (`Cedula`),
+  KEY `FK_ESTUDIANTE_UNIVERSIDAD` (`Universidad`),
+  KEY `FK_ESTUDIANTE_ESCUELA` (`Escuela`),
+  KEY `FK_ESTUDIANTE_SEDE` (`Sede`),
+  KEY `FK_ESTUDIANTE_CARRERA` (`Carrera`),
+  KEY `FK_ESTUDIANTE_ESTADO` (`Estado`),
+  KEY `FK_ESTUDIANTE_SEMESTRE` (`Semestre`)
+) ENGINE=InnoDB AUTO_INCREMENT=123443211 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Estudiante`
+--
+
+INSERT INTO `Estudiante` (`Cedula`, `Universidad`, `Escuela`, `Sede`, `Carrera`, `Carne`, `Estado`, `Semestre`) VALUES
+(123443210, 1, 1, 2, 1, '2016000000', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -186,11 +262,14 @@ CREATE TABLE `Estudiante` (
 -- Table structure for table `Evaluacion`
 --
 
-CREATE TABLE `Evaluacion` (
+CREATE TABLE IF NOT EXISTS `Evaluacion` (
   `CedulaEvaluador` int(11) NOT NULL,
   `CedulaEvaluado` int(11) NOT NULL,
   `JSONEvaluacion` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TipoEvaluacion` int(11) NOT NULL
+  `TipoEvaluacion` int(11) NOT NULL,
+  PRIMARY KEY (`CedulaEvaluador`),
+  KEY `FK_EVALUACION_CEDULA_EVALUADO` (`CedulaEvaluado`),
+  KEY `FK_EVALUACION_TIPO` (`TipoEvaluacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -199,14 +278,16 @@ CREATE TABLE `Evaluacion` (
 -- Table structure for table `Evento`
 --
 
-CREATE TABLE `Evento` (
+CREATE TABLE IF NOT EXISTS `Evento` (
   `idEvento` int(11) NOT NULL,
   `Fecha` date NOT NULL,
   `HoraInicio` time NOT NULL,
   `HoraFin` time NOT NULL,
   `TipoEvento` int(11) NOT NULL,
   `Foto` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Nombre` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Nombre` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idEvento`),
+  KEY `FK_EVENTO_TIPO` (`TipoEvento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -215,7 +296,7 @@ CREATE TABLE `Evento` (
 -- Table structure for table `FormularioCharla`
 --
 
-CREATE TABLE `FormularioCharla` (
+CREATE TABLE IF NOT EXISTS `FormularioCharla` (
   `CedulaJuridica` int(11) NOT NULL,
   `idEvento` int(11) NOT NULL,
   `NombreCharla` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -223,7 +304,12 @@ CREATE TABLE `FormularioCharla` (
   `Hora` time NOT NULL,
   `Expositor` int(11) NOT NULL,
   `Estado` int(11) NOT NULL,
-  `idFormularioCharla` int(11) NOT NULL
+  `idFormularioCharla` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idFormularioCharla`),
+  KEY `FK_FORMULARIO_CHARLA_CED_JUR` (`CedulaJuridica`),
+  KEY `FK_FORMULARIO_CHARLA_EVENTO` (`idEvento`),
+  KEY `FK_FORMULARIO_CHARLA_EXPOSITOR` (`Expositor`),
+  KEY `FK_FORMULARIO_CHARLA_ESTADO` (`Estado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -232,10 +318,21 @@ CREATE TABLE `FormularioCharla` (
 -- Table structure for table `NumeroTelefono`
 --
 
-CREATE TABLE `NumeroTelefono` (
-  `idTelefono` int(11) NOT NULL,
-  `Telefono` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS `NumeroTelefono` (
+  `idTelefono` int(11) NOT NULL AUTO_INCREMENT,
+  `Telefono` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `idPersona` int(11) NOT NULL,
+  PRIMARY KEY (`idTelefono`),
+  KEY `FK_TELEFONO_PERSONA` (`idPersona`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `NumeroTelefono`
+--
+
+INSERT INTO `NumeroTelefono` (`idTelefono`, `Telefono`, `idPersona`) VALUES
+(11, '88888888', 123443210),
+(12, '99999999', 123443210);
 
 -- --------------------------------------------------------
 
@@ -243,15 +340,28 @@ CREATE TABLE `NumeroTelefono` (
 -- Table structure for table `Persona`
 --
 
-CREATE TABLE `Persona` (
+CREATE TABLE IF NOT EXISTS `Persona` (
   `Cedula` int(11) NOT NULL,
   `Nombre` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `SegundoNombre` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Apellido` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `SegundoApellido` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Genero` int(11) NOT NULL,
-  `TipoPersona` int(11) NOT NULL
+  `TipoPersona` int(11) NOT NULL,
+  PRIMARY KEY (`Cedula`),
+  KEY `FK_PERSONA_TIPO_PERSONA` (`TipoPersona`),
+  KEY `FK_PERSONA_GENERO` (`Genero`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Persona`
+--
+
+INSERT INTO `Persona` (`Cedula`, `Nombre`, `SegundoNombre`, `Apellido`, `SegundoApellido`, `Genero`, `TipoPersona`) VALUES
+(43214321, 'Alvaro', NULL, 'Castro', NULL, 1, 4),
+(123412341, 'Juanita', NULL, 'Perez', NULL, 2, 3),
+(123443210, 'Juan', 'Paco', 'Pedro', 'de la Mar', 1, 1),
+(123456789, 'Juan', NULL, 'Perez', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -259,12 +369,22 @@ CREATE TABLE `Persona` (
 -- Table structure for table `Sede`
 --
 
-CREATE TABLE `Sede` (
-  `idSede` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Sede` (
+  `idSede` int(11) NOT NULL AUTO_INCREMENT,
   `idUniversidad` int(11) NOT NULL,
   `NombreSede` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Direccion` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `Direccion` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idSede`),
+  KEY `FK_SEDE_UNIVERSIDAD` (`idUniversidad`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Sede`
+--
+
+INSERT INTO `Sede` (`idSede`, `idUniversidad`, `NombreSede`, `Direccion`) VALUES
+(1, 1, 'San Jose', 'Barrio Amon'),
+(2, 1, 'Cartago', 'Cartago');
 
 -- --------------------------------------------------------
 
@@ -272,11 +392,21 @@ CREATE TABLE `Sede` (
 -- Table structure for table `Semestre`
 --
 
-CREATE TABLE `Semestre` (
-  `IdSemestre` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Semestre` (
+  `IdSemestre` int(11) NOT NULL AUTO_INCREMENT,
   `Ano` int(11) NOT NULL,
-  `NumeroSemestre` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `NumeroSemestre` int(11) NOT NULL,
+  PRIMARY KEY (`IdSemestre`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Semestre`
+--
+
+INSERT INTO `Semestre` (`IdSemestre`, `Ano`, `NumeroSemestre`) VALUES
+(1, 2018, 2),
+(2, 2019, 1),
+(3, 2019, 2);
 
 -- --------------------------------------------------------
 
@@ -284,9 +414,10 @@ CREATE TABLE `Semestre` (
 -- Table structure for table `TipoEvaluacion`
 --
 
-CREATE TABLE `TipoEvaluacion` (
-  `idEvaluacion` int(11) NOT NULL,
-  `TipoEvaluacion` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
+CREATE TABLE IF NOT EXISTS `TipoEvaluacion` (
+  `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT,
+  `TipoEvaluacion` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idEvaluacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -295,11 +426,24 @@ CREATE TABLE `TipoEvaluacion` (
 -- Table structure for table `TipoPersona`
 --
 
-CREATE TABLE `TipoPersona` (
-  `IdTipo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `TipoPersona` (
+  `IdTipo` int(11) NOT NULL AUTO_INCREMENT,
   `Tipo` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `EmpresaAsociada` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `EmpresaAsociada` int(11) DEFAULT NULL,
+  `PaginaInicio` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`IdTipo`),
+  KEY `FK_TIPO_PERSONA_EMPRESA_ASOCIADA` (`EmpresaAsociada`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `TipoPersona`
+--
+
+INSERT INTO `TipoPersona` (`IdTipo`, `Tipo`, `EmpresaAsociada`, `PaginaInicio`) VALUES
+(1, 'Estudiante', NULL, 'localhost:4200/estudiante'),
+(2, 'Empresa', NULL, 'localhost:4200/empresa'),
+(3, 'Administrador', NULL, 'localhost:4200/administrador'),
+(4, 'Coordinador', NULL, 'localhost:4200/coordinador');
 
 -- --------------------------------------------------------
 
@@ -307,10 +451,18 @@ CREATE TABLE `TipoPersona` (
 -- Table structure for table `Universidad`
 --
 
-CREATE TABLE `Universidad` (
-  `idUniversidad` int(11) NOT NULL,
-  `NombreUniversidad` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS `Universidad` (
+  `idUniversidad` int(11) NOT NULL AUTO_INCREMENT,
+  `NombreUniversidad` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`idUniversidad`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `Universidad`
+--
+
+INSERT INTO `Universidad` (`idUniversidad`, `NombreUniversidad`) VALUES
+(1, 'ITCR');
 
 -- --------------------------------------------------------
 
@@ -318,291 +470,19 @@ CREATE TABLE `Universidad` (
 -- Table structure for table `Usuario`
 --
 
-CREATE TABLE `Usuario` (
+CREATE TABLE IF NOT EXISTS `Usuario` (
   `Cedula` int(11) NOT NULL,
   `NombreUsuario` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Contrasena` char(128) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Contrasena` char(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`Cedula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `Usuario`
 --
 
---
--- Indexes for table `Carrera`
---
-ALTER TABLE `Carrera`
-  ADD PRIMARY KEY (`idCarrera`),
-  ADD KEY `FK_ID_ESCUELA` (`idEscuela`);
-
---
--- Indexes for table `CarrerasPorSede`
---
-ALTER TABLE `CarrerasPorSede`
-  ADD PRIMARY KEY (`idCarrera`,`idSede`),
-  ADD KEY `FK_ID_SEDE` (`idSede`);
-
---
--- Indexes for table `CatalogoEvento`
---
-ALTER TABLE `CatalogoEvento`
-  ADD PRIMARY KEY (`idTipoEvento`);
-
---
--- Indexes for table `CatalogoGenero`
---
-ALTER TABLE `CatalogoGenero`
-  ADD PRIMARY KEY (`idGenero`);
-
---
--- Indexes for table `CoordinadorPractica`
---
-ALTER TABLE `CoordinadorPractica`
-  ADD PRIMARY KEY (`Cedula`),
-  ADD KEY `FK_CARRERA` (`idCarrera`),
-  ADD KEY `FK_SEDE` (`idSede`);
-
---
--- Indexes for table `DireccionCorreoElectronico`
---
-ALTER TABLE `DireccionCorreoElectronico`
-  ADD PRIMARY KEY (`idCorreoElectronico`),
-  ADD KEY `FK_CEDULA_PERSONA` (`idPersona`);
-
---
--- Indexes for table `Documento`
---
-ALTER TABLE `Documento`
-  ADD PRIMARY KEY (`idDocumento`),
-  ADD KEY `FK_DUENO_DOCUMENTO` (`Dueno`);
-
---
--- Indexes for table `EmpresasPorCarreraYSede`
---
-ALTER TABLE `EmpresasPorCarreraYSede`
-  ADD PRIMARY KEY (`Sede`,`Carrera`,`CedulaJuridicaEmpresa`),
-  ADD KEY `FK_EPCS_EMPRESA` (`CedulaJuridicaEmpresa`),
-  ADD KEY `FK_EPCS_CARRERA` (`Carrera`);
-
---
--- Indexes for table `Escuela`
---
-ALTER TABLE `Escuela`
-  ADD PRIMARY KEY (`IdEscuela`),
-  ADD KEY `FK_ESCUELA_UNIVERSIDAD` (`IdUniversidad`);
-
---
--- Indexes for table `EstadoEmpresa`
---
-ALTER TABLE `EstadoEmpresa`
-  ADD PRIMARY KEY (`idEstado`);
-
---
--- Indexes for table `EstadoEstudiante`
---
-ALTER TABLE `EstadoEstudiante`
-  ADD PRIMARY KEY (`idEstado`);
-
---
--- Indexes for table `EstadoFormularioCharla`
---
-ALTER TABLE `EstadoFormularioCharla`
-  ADD PRIMARY KEY (`idEstado`);
-
---
--- Indexes for table `Estudiante`
---
-ALTER TABLE `Estudiante`
-  ADD PRIMARY KEY (`Cedula`),
-  ADD KEY `FK_ESTUDIANTE_UNIVERSIDAD` (`Universidad`),
-  ADD KEY `FK_ESTUDIANTE_ESCUELA` (`Escuela`),
-  ADD KEY `FK_ESTUDIANTE_SEDE` (`Sede`),
-  ADD KEY `FK_ESTUDIANTE_CARRERA` (`Carrera`),
-  ADD KEY `FK_ESTUDIANTE_ESTADO` (`Estado`),
-  ADD KEY `FK_ESTUDIANTE_SEMESTRE` (`Semestre`);
-
---
--- Indexes for table `Evaluacion`
---
-ALTER TABLE `Evaluacion`
-  ADD PRIMARY KEY (`CedulaEvaluador`),
-  ADD KEY `FK_EVALUACION_CEDULA_EVALUADO` (`CedulaEvaluado`),
-  ADD KEY `FK_EVALUACION_TIPO` (`TipoEvaluacion`);
-
---
--- Indexes for table `Evento`
---
-ALTER TABLE `Evento`
-  ADD PRIMARY KEY (`idEvento`),
-  ADD KEY `FK_EVENTO_TIPO` (`TipoEvento`);
-
---
--- Indexes for table `FormularioCharla`
---
-ALTER TABLE `FormularioCharla`
-  ADD PRIMARY KEY (`idFormularioCharla`),
-  ADD KEY `FK_FORMULARIO_CHARLA_CED_JUR` (`CedulaJuridica`),
-  ADD KEY `FK_FORMULARIO_CHARLA_EVENTO` (`idEvento`),
-  ADD KEY `FK_FORMULARIO_CHARLA_EXPOSITOR` (`Expositor`),
-  ADD KEY `FK_FORMULARIO_CHARLA_ESTADO` (`Estado`);
-
---
--- Indexes for table `NumeroTelefono`
---
-ALTER TABLE `NumeroTelefono`
-  ADD PRIMARY KEY (`idTelefono`);
-
---
--- Indexes for table `Persona`
---
-ALTER TABLE `Persona`
-  ADD PRIMARY KEY (`Cedula`),
-  ADD KEY `FK_PERSONA_TIPO_PERSONA` (`TipoPersona`),
-  ADD KEY `FK_PERSONA_GENERO` (`Genero`);
-
---
--- Indexes for table `Sede`
---
-ALTER TABLE `Sede`
-  ADD PRIMARY KEY (`idSede`),
-  ADD KEY `FK_SEDE_UNIVERSIDAD` (`idUniversidad`);
-
---
--- Indexes for table `Semestre`
---
-ALTER TABLE `Semestre`
-  ADD PRIMARY KEY (`IdSemestre`);
-
---
--- Indexes for table `TipoEvaluacion`
---
-ALTER TABLE `TipoEvaluacion`
-  ADD PRIMARY KEY (`idEvaluacion`);
-
---
--- Indexes for table `TipoPersona`
---
-ALTER TABLE `TipoPersona`
-  ADD PRIMARY KEY (`IdTipo`),
-  ADD KEY `FK_TIPO_PERSONA_EMPRESA_ASOCIADA` (`EmpresaAsociada`);
-
---
--- Indexes for table `Universidad`
---
-ALTER TABLE `Universidad`
-  ADD PRIMARY KEY (`idUniversidad`);
-
---
--- Indexes for table `Usuario`
---
-ALTER TABLE `Usuario`
-  ADD PRIMARY KEY (`Cedula`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Carrera`
---
-ALTER TABLE `Carrera`
-  MODIFY `idCarrera` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `CatalogoEvento`
---
-ALTER TABLE `CatalogoEvento`
-  MODIFY `idTipoEvento` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `CatalogoGenero`
---
-ALTER TABLE `CatalogoGenero`
-  MODIFY `idGenero` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `DireccionCorreoElectronico`
---
-ALTER TABLE `DireccionCorreoElectronico`
-  MODIFY `idCorreoElectronico` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Documento`
---
-ALTER TABLE `Documento`
-  MODIFY `idDocumento` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Escuela`
---
-ALTER TABLE `Escuela`
-  MODIFY `IdEscuela` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `EstadoEmpresa`
---
-ALTER TABLE `EstadoEmpresa`
-  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `EstadoEstudiante`
---
-ALTER TABLE `EstadoEstudiante`
-  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `EstadoFormularioCharla`
---
-ALTER TABLE `EstadoFormularioCharla`
-  MODIFY `idEstado` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Estudiante`
---
-ALTER TABLE `Estudiante`
-  MODIFY `Cedula` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `FormularioCharla`
---
-ALTER TABLE `FormularioCharla`
-  MODIFY `idFormularioCharla` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `NumeroTelefono`
---
-ALTER TABLE `NumeroTelefono`
-  MODIFY `idTelefono` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Sede`
---
-ALTER TABLE `Sede`
-  MODIFY `idSede` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Semestre`
---
-ALTER TABLE `Semestre`
-  MODIFY `IdSemestre` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `TipoEvaluacion`
---
-ALTER TABLE `TipoEvaluacion`
-  MODIFY `idEvaluacion` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `TipoPersona`
---
-ALTER TABLE `TipoPersona`
-  MODIFY `IdTipo` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `Universidad`
---
-ALTER TABLE `Universidad`
-  MODIFY `idUniversidad` int(11) NOT NULL AUTO_INCREMENT;
+INSERT INTO `Usuario` (`Cedula`, `NombreUsuario`, `Contrasena`) VALUES
+(123443210, 'usuario', '$2b$10$RQMM1KYG8L0mXJ0V913Oze3EMB9BzO/z5d2I6DxV8uZ4zjuuShIla');
 
 --
 -- Constraints for dumped tables
@@ -660,6 +540,7 @@ ALTER TABLE `Escuela`
 --
 ALTER TABLE `Estudiante`
   ADD CONSTRAINT `FK_ESTUDIANTE_CARRERA` FOREIGN KEY (`Carrera`) REFERENCES `Carrera` (`idCarrera`),
+  ADD CONSTRAINT `FK_ESTUDIANTE_CEDULA` FOREIGN KEY (`Cedula`) REFERENCES `Persona` (`Cedula`),
   ADD CONSTRAINT `FK_ESTUDIANTE_ESCUELA` FOREIGN KEY (`Escuela`) REFERENCES `Escuela` (`IdEscuela`),
   ADD CONSTRAINT `FK_ESTUDIANTE_ESTADO` FOREIGN KEY (`Estado`) REFERENCES `EstadoEstudiante` (`idEstado`),
   ADD CONSTRAINT `FK_ESTUDIANTE_SEDE` FOREIGN KEY (`Sede`) REFERENCES `Sede` (`idSede`),
@@ -688,6 +569,12 @@ ALTER TABLE `FormularioCharla`
   ADD CONSTRAINT `FK_FORMULARIO_CHARLA_ESTADO` FOREIGN KEY (`Estado`) REFERENCES `EstadoFormularioCharla` (`idEstado`),
   ADD CONSTRAINT `FK_FORMULARIO_CHARLA_EVENTO` FOREIGN KEY (`idEvento`) REFERENCES `Evento` (`idEvento`),
   ADD CONSTRAINT `FK_FORMULARIO_CHARLA_EXPOSITOR` FOREIGN KEY (`Expositor`) REFERENCES `Persona` (`Cedula`);
+
+--
+-- Constraints for table `NumeroTelefono`
+--
+ALTER TABLE `NumeroTelefono`
+  ADD CONSTRAINT `FK_TELEFONO_PERSONA` FOREIGN KEY (`idPersona`) REFERENCES `Persona` (`Cedula`);
 
 --
 -- Constraints for table `Persona`

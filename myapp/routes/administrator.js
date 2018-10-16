@@ -18,38 +18,50 @@ router.route('/')
 });
 
 router.route('/admins')
-.get(async function(req, res, next) {
-  let result = await AdminBusiness.selectAllAdmins();
-  res.send(result);
-})
+  .get(async function(req, res, next) {
+    let result = await AdminBusiness.selectAllAdmins();
+    res.send(result);
+  })
+  .post(function(req, res, next) {
+    person = req.body.person;
+    user = req.body.user;
+    AdminBusiness.createAdministrator(user, person);
+    res.send('success');
+  })
 
 router.route('/careers')
-.get(async function(req, res, next) {
-  let result = await CareerBusiness.selectAllCareers();
-  res.send(result);
-})
+  .get(async function(req, res, next) {
+    let result = await CareerBusiness.selectAllCareers();
+    res.send(result);
+  })
 
 router.route('/sites')
-.get(async function(req, res, next) {
-  let result = await SitesBusiness.selectAllSites();
-  res.send(result);
-})
+  .get(async function(req, res, next) {
+    let result = await SitesBusiness.selectAllSites();
+    res.send(result);
+  })
 
 router.route('/schools')
-.get(async function(req, res, next) {
-  let result = await SchoolBusiness.selectAllSchools();
-  res.send(result);
-})
+  .get(async function(req, res, next) {
+    let result = await SchoolBusiness.selectAllSchools();
+    res.send(result);
+  })
 
 router.route('/coordinator')
-.get(async function(req, res, next) {
-  let result = await CoordinatorBusiness.selectAllCoordinators();
-  res.send(result);
-})
+  .get(async function(req, res, next) {
+    let result = await CoordinatorBusiness.selectAllCoordinators();
+    res.send(result);
+  })
+  .post(function(req, res, next) {
+    person = req.body.person;
+    user = req.body.user;
+    CoordinatorBusiness.createCoordinator(person, user);
+    res.send('success');
+  })
 
 router.route('/semesters')
-.get(async function(req, res, next) {
-  let result = await AdminBusiness.selectAllSemesters();
-  res.send(result);
-})
+  .get(async function(req, res, next) {
+    let result = await AdminBusiness.selectAllSemesters();
+    res.send(result);
+  })
 module.exports = router;
