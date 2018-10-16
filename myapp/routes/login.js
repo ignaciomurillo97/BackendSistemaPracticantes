@@ -15,7 +15,8 @@ router.post ('/', function(req, res, next){
 
     console.log(user);
     let userBusiness = new UserBusiness();
-    userBusiness.auth(user);
+    console.log(userBusiness.auth(user));
+
 
 
     res.send('hola');

@@ -2,16 +2,14 @@ let UserDB = require('../db/userDB.js');
 
 class UserBusiness {
 
-    constructor(){
+    constructor(){}
 
-    }
-
-    auth(user){
+    async auth(user){
 
         let userDB = new UserDB();
-        userDB.auth(user).then((rows) => {
-            //logica para el login usando objeto user 
-        });
+        let rows = await userDB.auth(user);
+        console.log(rows);
+        return rows;
 
         // if (dbResponse.length > 0 && passwordHash.verify(password, dbResponse[0].Contraseña)) {
         //     req.session.user = dbResponse[0];

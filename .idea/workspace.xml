@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988c07f5-a92d-4833-a229-5616122f570d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myapp/business/userBusiness.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/db/db_access.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/db/db_access.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/business/userBusiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/business/userBusiness.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/db/userDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/db/userDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/model/person/user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/model/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,10 +20,12 @@
     <session id="2143221362">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -48,7 +45,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1154" />
+          <entry key="js" value="1261" />
           <entry key="json" value="14" />
           <entry key="www" value="5" />
         </counts>
@@ -56,7 +53,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="1159" />
+          <entry key="JavaScript" value="1266" />
         </counts>
       </usages-collector>
     </session>
@@ -66,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="22" column="93" lean-forward="true" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+            <state relative-caret-position="506">
+              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -75,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            <state relative-caret-position="374">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -84,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+            <state relative-caret-position="132">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -121,8 +118,8 @@
         <option value="$PROJECT_DIR$/myapp/app.js" />
         <option value="$PROJECT_DIR$/myapp/model/user.js" />
         <option value="$PROJECT_DIR$/myapp/bin/www" />
-        <option value="$PROJECT_DIR$/myapp/routes/login.js" />
         <option value="$PROJECT_DIR$/myapp/db/userDB.js" />
+        <option value="$PROJECT_DIR$/myapp/routes/login.js" />
         <option value="$PROJECT_DIR$/myapp/business/userBusiness.js" />
       </list>
     </option>
@@ -165,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,6 +207,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,18 +255,19 @@
       <option name="presentableId" value="Default" />
       <updated>1539093366859</updated>
       <workItem from="1539093368377" duration="6078000" />
-      <workItem from="1539117472104" duration="4511000" />
+      <workItem from="1539117472104" duration="6896000" />
+      <workItem from="1539184165541" duration="165000" />
+      <workItem from="1539483997588" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10589000" />
+    <option name="totallyTimeSpent" value="13153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -281,7 +279,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -332,9 +330,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/model/person/user.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/model/person/user.js" />
     <entry file="file://$PROJECT_DIR$/myapp/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -356,24 +352,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
+    <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        <state relative-caret-position="506">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
+    <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="22" column="93" lean-forward="true" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+        <state relative-caret-position="374">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        <state relative-caret-position="132">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -18,12 +18,11 @@ class UserDB {
         return new Promise (function (resolve, reject) {
             db_connection.query(query, function (err, result, fields) {
                 if (err) reject(err);
-                let rows = result.map((result) =>{
-                    let user = new User();
-                    //asignar valores de user, no tengo datos y me da pereza insertarlos jaja
-                });
-
-                resolve(rows);
+                // let rows = result.map((result) =>{
+                //     let user = new User();
+                //     //asignar valores de user, no tengo datos y me da pereza insertarlos jaja
+                // });
+                resolve(result);
             });
         })
 
