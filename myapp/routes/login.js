@@ -7,7 +7,8 @@ router.post ('/', function(req, res, next){
   let username = req.body.username;
   let password = req.body.password;
 
-  UserBusiness.authenticate(username, password)
+  userBusiness = new UserBusiness();
+  userBusiness.authenticate(username, password)
     .then(function(response) {
       if (response.valid) {
         req.session.personType = response.personType;

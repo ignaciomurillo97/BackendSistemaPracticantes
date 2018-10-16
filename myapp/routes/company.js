@@ -12,7 +12,8 @@ router.post('/register', function(req, res, next) {
   user = req.body.user;
   companyInfo = req.body.companyInfo;
 
-  CompanyBusiness.createCompany(person, user, companyInfo);
+companyBusiness = new CompanyBusiness();
+  companyBusiness.createCompany(person, user, companyInfo);
 
   res.send('success');
 });

@@ -1,28 +1,32 @@
 let UserDB = require('../db/userDB.js');
 let bcrypt = require('bcrypt');
 
-module.exports.createUser = function(user) {
-  let promise = UserDB.createUser(user);
-  return promise;
-};
+class UserBusiness {
+  constructor() { }
 
-module.exports.authenticate = function(user, password) {
-  promise = new Promise(async function(resolve, reject) {
-    let dbResponse = await UserDB.selectLoginData(user);
-    var sessionData = {};
+  createUser (user) {
+    let promise = UserDB.createUser(user);
+    return promise;
+  };
 
-    if (dbResponse.length == 1 && bcrypt.compareSync(password, dbResponse[0].password)) {
-      var selectedUser = dbResponse[0];;
-      sessionData.redirect = selectedUser.startPage;
-      sessionData.personType = selectedUser.personType;
-      sessionData.valid = true;
-    } else {
-      sessionData.valid = false;
-    }
+  authenticate (user, password) {
+    promise = new Promise(async function(resolve, reject) {
+      let dbResponse = await UserDB.selectLoginData(user);
+      var sessionData = {};
 
-    resolve(sessionData);
-  });
-  return promise;
+      if (dbResponse.length == 1 && bcrypt.compareSync(password, dbResponse[0].password)) {
+        var selectedUser = dbResponse[0];;
+        sessionData.redirect = selectedUser.startPage;
+        sessionData.personType = selectedUser.personType;
+        sessionData.valid = true;
+      } else {
+        sessionData.valid = false;
+      }
+
+      resolve(sessionData);
+    });
+    return promise;
+  }
 }
 
-module.exports.auth = function (user){};
+module.exports = UserBusiness;
