@@ -22,8 +22,10 @@ router.route('/professors')
   })
 
 router.route('/event')
-  .get(function(req, res, next) {
-    res.send('trae los eventos');
+  .get(async function(req, res, next) {
+    let coordinatorBusiness = new CoordinatorBusiness();
+    let result = await coordinatorBusiness.selectEvents();
+    res.send(result);
   })
   .post(function(req, res, next) {
     let recievedEvent = req.body.event;

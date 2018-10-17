@@ -52,3 +52,13 @@ module.exports.createEvent = async function (event, activities) {
     });
   })
 }
+
+module.exports.selectEvents = async function () {
+  let query = 'SELECT idEvento, Fecha, HoraInicio, HoraFin, TipoEvento, Foto, Nombre FROM Evento';
+  return new Promise (function (resolve, reject) {
+    db_connection.query(query, function (err, result, fields) {
+      if (err) reject(err);
+      resolve(result);
+    });
+  })
+}

@@ -8,7 +8,6 @@ class CoordinatorBusiness {
   async selectAllCoordinators () {
     let promise = CoordinatorDB.selectCoordinators();
     let result = await promise;
-    console.log(result);
     return result;
   }
 
@@ -27,7 +26,12 @@ class CoordinatorBusiness {
 
   async createEvent (eventData, activities) {
     await CoordinatorDB.createEvent(eventData, activities);
-    //console.log(activities);
+  }
+
+  async selectEvents() {
+    let promise = CoordinatorDB.selectEvents();
+    let result = await promise;
+    return result;
   }
 }
 

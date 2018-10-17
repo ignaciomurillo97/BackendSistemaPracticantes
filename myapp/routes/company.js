@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const CompanyBusiness = require('../business/companyBusiness.js');
+const PersonBusiness = require("../business/personBusiness.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -17,5 +18,13 @@ companyBusiness = new CompanyBusiness();
 
   res.send('success');
 });
+
+
+// devuelve solo los datos de persona del estudiante.
+router.get('/person', async function(req, res, next) {
+  personBusiness = new PersonBusiness();
+  let result = await personBusiness.selectPersonByType(2);
+  res.send(result);
+})
 
 module.exports = router;
