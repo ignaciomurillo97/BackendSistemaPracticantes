@@ -43,14 +43,16 @@ class UserBusiness {
       let dbResponse = await userDB.authentication(user);
       let sessionData = {};
 
-      if (dbResponse.length == 1 && bcrypt.compareSync(password, dbResponse[0].password)) {
-        let selectedUser = dbResponse[0];;
+      if (dbResponse.length == 1 && bcrypt.compareSync(user.password, dbResponse[0].password)) {
+        let selectedUser = dbResponse[0];
         sessionData.redirect = selectedUser.startPage;
         sessionData.personType = selectedUser.personType;
         sessionData.valid = true;
       } else {
         sessionData.valid = false;
       }
+
+      return sessionData;
 
   }
 }

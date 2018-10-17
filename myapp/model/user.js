@@ -23,7 +23,7 @@ class User {
     }
 
     constructor(jsonObj){
-      Object.assign(this, data);
+      Object.assign(this, jsonObj);
     }
     
 }
