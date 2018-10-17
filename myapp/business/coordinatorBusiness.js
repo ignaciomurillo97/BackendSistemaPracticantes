@@ -24,6 +24,18 @@ class CoordinatorBusiness {
         console.error(err);
       })
   }
+
+  async createEvent () {
+    let eventData = {
+      "date" : new Date(),
+      "startTime" : new Date(),
+      "endTime" : new Date(),
+      "photoPath" : "",
+      "type" : 1,
+      "name" : "Evento Vinculación con EmpresaSA"
+    };
+    await CoordinatorDB.createEvent(eventData);
+  }
 }
 
 module.exports = CoordinatorBusiness;

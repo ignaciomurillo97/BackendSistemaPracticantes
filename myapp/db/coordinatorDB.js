@@ -22,3 +22,18 @@ module.exports.selectCoordinators = function (){
     })
   }
 
+
+module.exports.createEvent = function (eventData) {
+  let query = "INSERT INTO Evento (idEvento, Fecha, HoraInicio, HoraFin, TipoEvento, Foto, Nombre) VALUES ('', ?, ?, ?, ?, ?, ?)";
+  return new Promise (function (resolve, reject) {
+    db_connection.query(query, [eventData.date, eventData.startTime, eventData.endTime, eventData.type, eventData.photoPath, eventData.name], function(err, result, fields) {
+      if (err) {
+        console.log(err);
+        reject();
+      } else {
+        resolve();
+      }
+    });
+  })
+
+}
