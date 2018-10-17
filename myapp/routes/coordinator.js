@@ -13,7 +13,8 @@ router.route('/professors')
   })
   .post(async function(req, res, next) {
     person = req.body.person;
-    await ProfessorBusiness.createProfessor(person);
+    professorBusiness = new ProfessorBusiness();
+    await professorBusiness.createProfessor(person);
     res.send('success');
   })
 

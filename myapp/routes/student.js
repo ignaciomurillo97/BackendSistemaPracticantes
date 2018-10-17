@@ -13,7 +13,8 @@ router.post('/register', function(req, res, next) {
   user = req.body.user;
   studentInfo = req.body.studentInfo;
 
-  StudentBusiness.createStudent(person, studentInfo, user)
+  studentBusiness = new StudentBusiness();
+  studentBusiness.createStudent(person, studentInfo, user)
 
   res.send('success');
 });
