@@ -21,10 +21,9 @@ class User {
     set identification(value) {
         this._identification = value;
     }
-    constructor(){
-        this._identification = 0;
-        this._userName = '';
-        this._password = '';
+
+    constructor(jsonObj){
+      Object.assign(this, data);
     }
     
 }

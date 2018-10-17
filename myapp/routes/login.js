@@ -1,10 +1,9 @@
 let express = require('express');
 let router = express.Router();
 let UserBusiness = require('../business/userBusiness.js');
-let User = require('../model/user.js');
 
-/* GET home page. */
 router.post ('/', function(req, res, next){
+
     res.setHeader('Content-Type', 'application/json');
 
     let loginObject;
@@ -31,7 +30,18 @@ router.post ('/', function(req, res, next){
         // }
         // res.send(loginObject);
     // })
-});
 
+  res.setHeader('Content-Type', 'application/json');
+  let username = req.body.username;
+  let password = req.body.password;
+
+  UserBusiness.authenticate(username, password)
+    .then(function(response) {
+      if (response.valid) {
+        req.session.personType = response.personType;
+      }
+      res.send(response);
+    })
+});
 
 module.exports = router;

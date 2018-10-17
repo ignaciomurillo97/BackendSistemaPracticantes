@@ -2,10 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988c07f5-a92d-4833-a229-5616122f570d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myapp/business/administratorBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/careerBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/companyBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/coordinatorBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/personBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/professorBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/schoolBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/siteBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/business/studentBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/adminDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/careersDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/companyDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/coordinatorDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/personDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/schoolDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/sitesDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/db/studentDB.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_files/SistemaPracticantes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_files/SistemaPracticantes.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/business/userBusiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/business/userBusiness.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/db/userDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/db/userDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/model/person.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/model/person.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/model/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/administrator.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/administrator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/company.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/coordinator.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/coordinator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myapp/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/routes/student.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/student.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,32 +47,33 @@
     <session id="2143221362">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="21" />
+          <entry key="js" value="28" />
           <entry key="json" value="2" />
-          <entry key="sql" value="1" />
+          <entry key="sql" value="2" />
           <entry key="www" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="26" />
-          <entry key="SQL" value="1" />
+          <entry key="JavaScript" value="33" />
+          <entry key="SQL" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1261" />
+          <entry key="js" value="1283" />
           <entry key="json" value="14" />
           <entry key="www" value="5" />
         </counts>
@@ -53,36 +81,27 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="1266" />
+          <entry key="JavaScript" value="1288" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="-447">
+              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
+        <entry file="file://$PROJECT_DIR$/myapp/db/db_access.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -118,9 +137,11 @@
         <option value="$PROJECT_DIR$/myapp/app.js" />
         <option value="$PROJECT_DIR$/myapp/model/user.js" />
         <option value="$PROJECT_DIR$/myapp/bin/www" />
-        <option value="$PROJECT_DIR$/myapp/db/userDB.js" />
-        <option value="$PROJECT_DIR$/myapp/routes/login.js" />
+        <option value="$PROJECT_DIR$/myapp/business/studentBusiness.js" />
         <option value="$PROJECT_DIR$/myapp/business/userBusiness.js" />
+        <option value="$PROJECT_DIR$/myapp/routes/login.js" />
+        <option value="$PROJECT_DIR$/db_files/SistemaPracticantes.sql" />
+        <option value="$PROJECT_DIR$/myapp/db/userDB.js" />
       </list>
     </option>
   </component>
@@ -258,14 +279,17 @@
       <workItem from="1539117472104" duration="6896000" />
       <workItem from="1539184165541" duration="165000" />
       <workItem from="1539483997588" duration="14000" />
+      <workItem from="1539723381725" duration="112000" />
+      <workItem from="1539723575138" duration="2900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13153000" />
+    <option name="totallyTimeSpent" value="16165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -279,7 +303,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -306,13 +330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_files/SistemaPracticantes.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1166">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
@@ -323,25 +340,11 @@
     <entry file="file://$PROJECT_DIR$/myapp/routes/session.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/db/db_access.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/model/person/user.js" />
     <entry file="file://$PROJECT_DIR$/myapp/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="63" column="2" lean-forward="true" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/model/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -352,24 +355,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
+    <entry file="file://$PROJECT_DIR$/myapp/db/personDB.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/db/schoolDB.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/business/studentBusiness.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
+    <entry file="file://$PROJECT_DIR$/myapp/db/studentDB.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/db/sitesDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        <state>
+          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/model/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/db/db_access.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_files/SistemaPracticantes.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-447">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
         </state>
       </provider>
     </entry>
