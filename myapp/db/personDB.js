@@ -1,6 +1,11 @@
 const db_connection = require('./db_access.js');
 const Person = require('../model/person.js');
 
+class PersonDB{
+    constructor(){}
+
+}
+
 module.exports.createPerson = function (person) {
   let query = `INSERT INTO Persona (` +
   `Cedula,` +
@@ -26,7 +31,7 @@ module.exports.createPerson = function (person) {
       resolve(result);
     });
   })
-}
+};
 
 module.exports.selectPersonByType = function (type) {
   let query = "SELECT Cedula, Nombre, SegundoNombre, Apellido, SegundoApellido, Genero, TipoPersona FROM Persona WHERE TipoPersona = ?";
