@@ -1,8 +1,7 @@
 const db_connection = require('./db_access.js');
 
 module.exports.selectCoordinators = function (){
-    var query = `SELECT ` +
-      `Cedula, ` +
+    var query = `SELECT ` + `Cedula, ` +
       `Nombre, ` +
       `SegundoNombre, ` +
       `Apellido, ` +
@@ -22,11 +21,10 @@ module.exports.selectCoordinators = function (){
     })
   }
 
-
-module.exports.createEvent = function (eventData) {
-  let query = "INSERT INTO Evento (idEvento, Fecha, HoraInicio, HoraFin, TipoEvento, Foto, Nombre) VALUES ('', ?, ?, ?, ?, ?, ?)";
+module.exports.createActivity = function(activity, eventId) {
+  let query = "INSERT INTO `ActividadesPorEvento` (`idActividadesPorEvento`, `HoraInicio`, `HoraFin`, `Descripcion`, `Empresa`, `Evento`) VALUES (NULL,?, ?, '', NULL, ?);";
   return new Promise (function (resolve, reject) {
-    db_connection.query(query, [eventData.date, eventData.startTime, eventData.endTime, eventData.type, eventData.photoPath, eventData.name], function(err, result, fields) {
+    db_connection.query(query, [activity.startTime, activity.endTime, eventId], function(err, result, fields) {
       if (err) {
         console.log(err);
         reject();
@@ -35,5 +33,22 @@ module.exports.createEvent = function (eventData) {
       }
     });
   })
+}
 
+module.exports.createEvent = async function (event, activities) {
+  let query = "INSERT INTO Evento (idEvento, Fecha, HoraInicio, HoraFin, TipoEvento, Foto, Nombre) VALUES ('', ?, ?, ?, ?, ?, ?)";
+  return new Promise (function (resolve, reject) {
+    db_connection.query(query, [event.date, event.startTime, event.endTime, event.type, event.photoPath, event.name], function(err, result, fields) {
+      if (err) {
+        console.log(err);
+        reject();
+      } else {
+        console.log(activities); 
+        activities.forEach((activity) => {
+          module.exports.createActivity(activity, result.insertId);
+        })
+        resolve();
+      }
+    });
+  })
 }

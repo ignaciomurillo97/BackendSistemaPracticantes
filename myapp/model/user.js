@@ -22,8 +22,10 @@ class User {
         this._identification = value;
     }
 
-    constructor(jsonObj){
-      Object.assign(this, data);
+    constructor(username, password, identification){
+      this.userName = userName;
+      this.password = password;
+      this.identification = identification;
     }
     
 }

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const StudentBusiness = require("../business/studentBusiness.js");
 const PersonBusiness = require("../business/personBusiness.js");
 
 
@@ -9,21 +8,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post('/register', function(req, res, next) {
-  person = req.body.person;
-  user = req.body.user;
-  studentInfo = req.body.studentInfo;
-
-  studentBusiness = new StudentBusiness();
-  studentBusiness.createStudent(person, studentInfo, user)
-
-  res.send('success');
-});
-
 // devuelve solo los datos de persona del estudiante.
 router.get('/person', async function(req, res, next) {
   personBusiness = new PersonBusiness();
-  let result = await personBusiness.selectPersonByType(1);
+  let result = await personBusiness.selectPersonByType(5);
   res.send(result);
 })
 

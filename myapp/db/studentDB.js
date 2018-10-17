@@ -28,3 +28,7 @@ module.exports.createStudent = function (studentInfo) {
     });
   })
 }
+
+module.exports.selectStudent = function () {
+
+}

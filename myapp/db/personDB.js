@@ -28,10 +28,21 @@ module.exports.createPerson = function (person) {
   })
 }
 
+module.exports.selectPersonByType = function (type) {
+  let query = "SELECT Cedula, Nombre, SegundoNombre, Apellido, SegundoApellido, Genero, TipoPersona FROM Persona WHERE TipoPersona = ?";
+
+  return new Promise (function (resolve, reject) {
+    db_connection.query(query, [type], function (err, result, fields) {
+      if (err) reject(err);
+      resolve(result);
+    });
+  })
+}
+
 module.exports.addEmails = function (id, emailList) {
   let query = `INSERT INTO DireccionCorreoElectronico (` +
-      `CorreoElectronico,` +
-      `idPersona` +
+    `CorreoElectronico,` +
+    `idPersona` +
     `) VALUES`;
   for (i = 0; i < emailList.length; i++) {
     query += `(` +
@@ -52,8 +63,8 @@ module.exports.addEmails = function (id, emailList) {
 
 module.exports.addPhoneNumbers = function (id, phoneList) {
   let query = `INSERT INTO NumeroTelefono (` +
-      `Telefono,` +
-      `idPersona` +
+    `Telefono,` +
+    `idPersona` +
     `) VALUES`;
   for (i = 0; i < phoneList.length; i++) {
     query += `(` +

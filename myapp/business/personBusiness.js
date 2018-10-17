@@ -15,6 +15,12 @@ class PersonBusiness {
       resolve();
     });
   }
+
+  async selectPersonByType (type) {
+    let promise = PersonDB.selectPersonByType(type);
+    let result = await promise;
+    return result;
+  }
 }
 
 module.exports = PersonBusiness;

@@ -14,6 +14,7 @@ let coordinatorRouter = require('./routes/coordinator.js');
 let indexRouter = require('./routes/index.js');
 let loginRouter = require('./routes/login.js');
 let studentRouter = require('./routes/student.js');
+let professor = require('./routes/professor.js');
 
 let app = express();
 app.use(cors());
@@ -44,5 +45,6 @@ app.use('/company', companyRouter);
 app.use('/coordinator', coordinatorRouter);
 app.use('/student', studentRouter);
 app.use('/login', loginRouter);
+app.use('/professor', professor);
 
 module.exports = app;

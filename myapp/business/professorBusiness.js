@@ -6,7 +6,6 @@ class ProfessorBusiness {
 
   async createProfessor (person) {
     person.type = 5;
-
     PersonBusiness.createPerson(person);
   }
 }
