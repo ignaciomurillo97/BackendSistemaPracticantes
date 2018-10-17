@@ -22,8 +22,8 @@ router.post('/register', function(req, res, next) {
 
 // devuelve solo los datos de persona del estudiante.
 router.get('/person', async function(req, res, next) {
-  personBusiness = new PersonBusiness();
-  let result = await personBusiness.selectPersonByType(1);
+  studentBusiness = new StudentBusiness();
+  let result = await studentBusiness.selectStudent(1);
   res.send(result);
 })
 

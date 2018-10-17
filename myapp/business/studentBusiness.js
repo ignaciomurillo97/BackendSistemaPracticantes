@@ -21,6 +21,11 @@ class StudentBusiness {
       })
   };
 
+
+  async selectStudent (state) {
+    let res = await StudentDB.selectStudent(state);
+    return res;
+  }
 }
 
 module.exports = StudentBusiness;
