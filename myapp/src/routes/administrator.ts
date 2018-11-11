@@ -1,27 +1,31 @@
 import express = require('express');
 import { Request, Response } from 'express'
+import { Administrator } from '../model/administrator'
+import { AdministratorBusiness } from '../business/administratorBusiness'
 
 //DEBUG
 import { AdministratorDB } from '../db/administratorDB'
-import { Administrator } from '../model/administrator'
 
 let router = express.Router();
 
 
 router.route('/')
   .get(async (req: Request, res: Response) => {
-    let promise: Promise<Array<Administrator>>;
-    let personDB: AdministratorDB = new AdministratorDB();
-    promise = personDB.select();
-    let result = await promise;
+    let adminBusiness: AdministratorBusiness = new AdministratorBusiness();
+    let result: Array<Administrator> = await adminBusiness.selectAdministrator();
     res.send(result);
   })
   .post (async (req: Request, res: Response) => {
-    let adminDB: AdministratorDB = new AdministratorDB();
     let admin: Administrator = new Administrator();
+    let adminBusiness: AdministratorBusiness = new AdministratorBusiness();
     admin.fromDBResult(req.body.Administrator);
-    let result: number = await adminDB.insert(admin);
-    res.send({result: result});
+    adminBusiness.createAdministrator(admin)
+      .then(function () {
+        res.send({success: "success"});
+      })
+      .catch(function(err) {
+        res.send({success: "fail"});
+      })
   })
 
 export { router };

@@ -33,7 +33,7 @@ class AdministratorDB {
     return result;
   }
 
-  update(admin: Administrator) :boolean {
+  update(admin: Administrator, transaction: any) {
     try {
       knex
         .where({
@@ -42,27 +42,22 @@ class AdministratorDB {
         })
         .update( 
           admin.toDBNames()
-        );
+        )
+        .transacting(transaction);
     } catch (err) {
-      console.error(err);
-      return false;
+      throw err;
     }
-    return true;
   }
 
-  async insert (admin: Administrator) :Promise<number> {
-    let res: number;
+  async insert (admin: Administrator, transaction: any) {
     try {
-      res = await knex('Persona')
+      await knex('Persona')
         .insert(
           admin.toDBNames()
-        );
+        )
     } catch (err) {
-      console.error(err);
-      return -1;
+      throw err;
     }
-    return res;
-
   }
 }
 

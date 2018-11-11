@@ -9,24 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
-//DEBUG
-const administratorDB_1 = require("../db/administratorDB");
 const administrator_1 = require("../model/administrator");
+const administratorBusiness_1 = require("../business/administratorBusiness");
 let router = express.Router();
 exports.router = router;
 router.route('/')
     .get((req, res) => __awaiter(this, void 0, void 0, function* () {
-    let promise;
-    let personDB = new administratorDB_1.AdministratorDB();
-    promise = personDB.select();
-    let result = yield promise;
+    let adminBusiness = new administratorBusiness_1.AdministratorBusiness();
+    let result = yield adminBusiness.selectAdministrator();
     res.send(result);
 }))
     .post((req, res) => __awaiter(this, void 0, void 0, function* () {
-    let adminDB = new administratorDB_1.AdministratorDB();
     let admin = new administrator_1.Administrator();
+    let adminBusiness = new administratorBusiness_1.AdministratorBusiness();
     admin.fromDBResult(req.body.Administrator);
-    let result = yield adminDB.insert(admin);
-    res.send({ result: result });
+    adminBusiness.createAdministrator(admin)
+        .then(function () {
+        res.send({ success: "success" });
+    })
+        .catch(function (err) {
+        res.send({ success: "fail" });
+    });
 }));
 //# sourceMappingURL=administrator.js.map

@@ -30,33 +30,29 @@ class AdministratorDB {
             return result;
         });
     }
-    update(admin) {
+    update(admin, transaction) {
         try {
             dbconnection_1.knex
                 .where({
                 Cedula: admin.id,
                 TipoPersona: this._tipe
             })
-                .update(admin.toDBNames());
+                .update(admin.toDBNames())
+                .transacting(transaction);
         }
         catch (err) {
-            console.error(err);
-            return false;
+            throw err;
         }
-        return true;
     }
-    insert(admin) {
+    insert(admin, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
-            let res;
             try {
-                res = yield dbconnection_1.knex('Persona')
+                yield dbconnection_1.knex('Persona')
                     .insert(admin.toDBNames());
             }
             catch (err) {
-                console.error(err);
-                return -1;
+                throw err;
             }
-            return res;
         });
     }
 }
