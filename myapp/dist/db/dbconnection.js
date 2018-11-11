@@ -1,19 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mysql = require("mysql");
-let db_config = {
-    host: "localhost",
-    user: "root",
-    database: "SistemaPracticantes",
-    password: "root",
-    multipleStatements: true
-};
-let pool = mysql.createPool(db_config);
-exports.DBConnection = pool;
-pool.getConnection(function (err, connection) {
-    if (err) {
-        throw err;
-    }
-    console.log("Conectado a la DB");
+const knex = require("knex");
+var knexConf = knex({
+    client: "mysql",
+    connection: {
+        host: '127.0.0.1',
+        user: 'root',
+        password: 'root',
+        database: 'SistemaPracticantes'
+    },
+    pool: { min: 0, max: 7 }
 });
+exports.knex = knexConf;
 //# sourceMappingURL=dbconnection.js.map

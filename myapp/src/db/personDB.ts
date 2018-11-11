@@ -1,5 +1,5 @@
 import { Person } from '../model/person'
-import { DBConnection } from './dbconnection'
+import { knex } from './dbconnection'
 
 class PersonDB {
 
@@ -7,35 +7,27 @@ class PersonDB {
 
   }
 
-  select () : Promise<Array<Person>> {
-    let query: string;
-    query = `
-      SELECT Cedula,
-       Nombre,
-       SegundoNombre,
-       Apellido,
-       SegundoApellido,
-       Genero,
-      TipoPersona FROM Persona
-      `;
-
-    return new Promise (function (resolve, reject) {
-      DBConnection.query(query, function(err, result, fields){
-        if (err) reject();
-        else {
-          let PersonArray: Array<any> = new Array();
-          for (var i = 0; i < result.length; i++) {
-            let obj = result[i];
-            let p: Person = dbResultToPerson(obj);
-            PersonArray.push(p);
-          }
-          resolve(PersonArray);
-        }
-      })
-    });
+  async select() : Promise<Array<Person>> {
+    let result = await knex
+    .column(
+      'Cedula',
+      'Nombre',
+      'SegundoNombre',
+      'Apellido',
+      'SegundoApellido',
+      'Genero',
+      'TipoPersona'
+    )
+    .select()
+    .from('Persona')
+    .map( function(row) {
+      return dbResultToPerson(row);
+    } );
+    return result;
   }
-
 }
+
+
 
 function dbResultToPerson (dbResult: any) : Person {
   let p            = new Person();
