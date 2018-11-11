@@ -31,11 +31,11 @@ class Person {
     set secondLastName(value) {
         this._secondLastName = value;
     }
-    get genre() {
-        return this._genre;
+    get gender() {
+        return this._gender;
     }
-    set genre(value) {
-        this._genre = value;
+    set gender(value) {
+        this._gender = value;
     }
     get personType() {
         return this._personType;
