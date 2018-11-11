@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 let router = express.Router();
 exports.router = router;
-router.route('/').get((req, res) => {
+router.route('/')
+    .get((req, res) => {
+    res.send("test");
 });
 //# sourceMappingURL=administrator.js.map

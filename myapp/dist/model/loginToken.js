@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class LoginToken {
     get personType() {
         return this._personType;
@@ -14,4 +16,5 @@ class LoginToken {
     constructor() {
     }
 }
+exports.LoginToken = LoginToken;
 //# sourceMappingURL=loginToken.js.map
