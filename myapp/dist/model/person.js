@@ -31,11 +31,11 @@ class Person {
     set secondLastName(value) {
         this._secondLastName = value;
     }
-    get genre() {
-        return this._genre;
+    get gender() {
+        return this._gender;
     }
-    set genre(value) {
-        this._genre = value;
+    set gender(value) {
+        this._gender = value;
     }
     get personType() {
         return this._personType;
@@ -44,6 +44,26 @@ class Person {
         this._personType = value;
     }
     constructor() {
+    }
+    fromDBResult(dbResult) {
+        this.id = dbResult.Cedula;
+        this.firstName = dbResult.Nombre;
+        this.secondName = dbResult.SegundoNombre;
+        this.lastName = dbResult.Apellido;
+        this.secondLastName = dbResult.SegundoApellido;
+        this.gender = dbResult.genero;
+        this.personType = dbResult.TipoPersona;
+    }
+    toDBNames() {
+        return {
+            Cedula: this.id,
+            Nombre: this.firstName,
+            SegundoNombre: this.secondName,
+            Apellido: this.lastName,
+            SegundoApellido: this.secondLastName,
+            genero: this.gender,
+            TipoPersona: this.personType
+        };
     }
 }
 exports.Person = Person;

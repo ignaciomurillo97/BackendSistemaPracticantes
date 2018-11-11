@@ -1,22 +1,13 @@
-import mysql = require('mysql');
-import {Pool} from 'mysql';
+import knex = require('knex');
 
-let db_config = {
-    host: "localhost",
-    user: "root",
-    database: "SistemaPracticantes",
-    password: "root",
-    multipleStatements: true
-};
-
-let pool: Pool = mysql.createPool(db_config);
-
-pool.getConnection(function(err, connection) {
-    if (err){
-        throw err;
-    }
-    console.log("Conectado a la DB");
+var knexConf = knex({
+  client: "mysql",
+  connection: {
+    host : '127.0.0.1',
+    user : 'root',
+    password : 'root',
+    database : 'SistemaPracticantes'
+  },
+  pool: { min: 0, max: 7 }
 });
-
-
-export { pool as DBConnection };
+export { knexConf as knex }
