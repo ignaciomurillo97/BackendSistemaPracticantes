@@ -4,9 +4,10 @@ import { Request, Response } from 'express'
 let router = express.Router();
 
 
-router.route('/').get((req: Request, res: Response) => {
-
-});
+router.route('/')
+  .get((req: Request, res: Response) => {
+    res.send("test")
+  });
 
 export { router };
 
