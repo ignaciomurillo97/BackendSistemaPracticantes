@@ -10,5 +10,4 @@ var knexConf = knex({
   },
   pool: { min: 0, max: 7 }
 })
-
 export { knexConf as knex }

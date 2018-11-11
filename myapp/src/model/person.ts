@@ -1,5 +1,5 @@
 import { University } from './university'
-import { Site } from './site'
+import { Site } from './site' 
 import { School } from './school'
 import { Career } from './career'
 
@@ -71,6 +71,28 @@ class Person
 
   constructor(){
 
+  }
+
+  fromDBResult(dbResult: any) {
+    this.id             = dbResult.Cedula;
+    this.firstName      = dbResult.Nombre;
+    this.secondName     = dbResult.SegundoNombre;
+    this.lastName       = dbResult.Apellido;
+    this.secondLastName = dbResult.SegundoApellido;
+    this.gender         = dbResult.genero;
+    this.personType     = dbResult.TipoPersona;
+  }
+
+  toDBNames () : Object {
+    return {
+      Cedula: this.id,
+      Nombre: this.firstName,
+      SegundoNombre: this.secondName,
+      Apellido: this.lastName,
+      SegundoApellido: this.secondLastName,
+      genero: this.gender,
+      TipoPersona: this.personType
+    }
   }
 
 }

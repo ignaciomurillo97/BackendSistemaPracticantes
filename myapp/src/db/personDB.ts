@@ -21,7 +21,7 @@ class PersonDB {
     .select()
     .from('Persona')
     .map( function(row) {
-      return dbResultToPerson(row);
+      return dbNamesToPerson(row);
     } );
     return result;
   }
@@ -29,7 +29,7 @@ class PersonDB {
 
 
 
-function dbResultToPerson (dbResult: any) : Person {
+function dbNamesToPerson (dbResult: any) : Person {
   let p            = new Person();
   p.id             = dbResult.Cedula;
   p.firstName      = dbResult.Nombre;

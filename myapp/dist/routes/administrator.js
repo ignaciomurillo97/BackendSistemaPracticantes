@@ -10,15 +10,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 //DEBUG
-const personDB_1 = require("../db/personDB");
+const administratorDB_1 = require("../db/administratorDB");
+const administrator_1 = require("../model/administrator");
 let router = express.Router();
 exports.router = router;
 router.route('/')
     .get((req, res) => __awaiter(this, void 0, void 0, function* () {
     let promise;
-    let personDB = new personDB_1.PersonDB();
+    let personDB = new administratorDB_1.AdministratorDB();
     promise = personDB.select();
     let result = yield promise;
     res.send(result);
+}))
+    .post((req, res) => __awaiter(this, void 0, void 0, function* () {
+    let adminDB = new administratorDB_1.AdministratorDB();
+    let admin = new administrator_1.Administrator();
+    admin.fromDBResult(req.body.Administrator);
+    let result = yield adminDB.insert(admin);
+    res.send({ result: result });
 }));
 //# sourceMappingURL=administrator.js.map
