@@ -7,7 +7,7 @@ class PersonDB {
 
   }
 
-  async select() : Promise<Array<Person>> {
+  protected async selectType(personType: number) : Promise<Array<Person>> {
     let result = await knex
     .column(
       'Cedula',
@@ -17,28 +17,49 @@ class PersonDB {
       'SegundoApellido',
       'Genero',
       'TipoPersona'
-    )
+    ).where({
+      TipoPersona: personType
+    })
     .select()
     .from('Persona')
-    .map( function(row) {
-      return dbNamesToPerson(row);
+    
+    result.map( function(row: any) {
+      let p = new Person();
+      p.fromDBNames(row)
+      return p;
     } );
+
     return result;
   }
-}
 
+  protected async update (person: Person, transaction: any) {
+    try {
+      await knex
+        .where({
+          Cedula: person.id,
+          TipoPersona: person.personType
+        })
+        .update( 
+          person.toDBNames()
+        )
+        .transacting(transaction);
+    } catch (err) {
+      throw err;
+    }
 
+  }
 
-function dbNamesToPerson (dbResult: any) : Person {
-  let p            = new Person();
-  p.id             = dbResult.Cedula;
-  p.firstName      = dbResult.Nombre;
-  p.secondName     = dbResult.SegundoNombre;
-  p.lastName       = dbResult.Apellido;
-  p.secondLastName = dbResult.SegundoApellido;
-  p.gender         = dbResult.genero;
-  p.personType     = dbResult.TipoPersona;
-  return p;
+  protected async insert (person: Person, transaction: any) {
+    try {
+      await knex('Persona')
+        .insert(
+          person.toDBNames()
+        )
+        .transacting(transaction);
+    } catch (err) {
+      throw err;
+    }
+  }
 }
 
 export { PersonDB }

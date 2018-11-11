@@ -8,30 +8,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const personDB_1 = require("../db/personDB");
-class AdministratorDB extends personDB_1.PersonDB {
+const user_1 = require("../model/user");
+const dbconnection_1 = require("./dbconnection");
+class PersonDB {
     constructor() {
-        super();
-        this._personType = 3;
     }
     select() {
-        const _super = name => super[name];
         return __awaiter(this, void 0, void 0, function* () {
-            return _super("selectType").call(this, this._personType);
-        });
-    }
-    update(admin, transaction) {
-        const _super = name => super[name];
-        return __awaiter(this, void 0, void 0, function* () {
-            yield _super("update").call(this, admin, transaction);
-        });
-    }
-    insert(admin, transaction) {
-        const _super = name => super[name];
-        return __awaiter(this, void 0, void 0, function* () {
-            yield _super("insert").call(this, admin, transaction);
+            let result = yield dbconnection_1.knex
+                .column('Cedula', 'NombreUsuario', 'Contrasena')
+                .select()
+                .from('Usuario')
+                .map(function (row) {
+                let user = new user_1.User();
+                user.fromDBNames(row);
+                return user;
+            });
+            return result;
         });
     }
 }
-exports.AdministratorDB = AdministratorDB;
-//# sourceMappingURL=administratorDB.js.map
+//# sourceMappingURL=userDB.js.map

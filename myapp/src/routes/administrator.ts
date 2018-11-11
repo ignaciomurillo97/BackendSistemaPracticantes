@@ -3,9 +3,6 @@ import { Request, Response } from 'express'
 import { Administrator } from '../model/administrator'
 import { AdministratorBusiness } from '../business/administratorBusiness'
 
-//DEBUG
-import { AdministratorDB } from '../db/administratorDB'
-
 let router = express.Router();
 
 
@@ -18,7 +15,7 @@ router.route('/')
   .post (async (req: Request, res: Response) => {
     let admin: Administrator = new Administrator();
     let adminBusiness: AdministratorBusiness = new AdministratorBusiness();
-    admin.fromDBResult(req.body.Administrator);
+    admin.fromDBNames(req.body.Administrator);
     adminBusiness.createAdministrator(admin)
       .then(function () {
         res.send({success: "success"});

@@ -13,29 +13,50 @@ const dbconnection_1 = require("./dbconnection");
 class PersonDB {
     constructor() {
     }
-    select() {
+    selectType(personType) {
         return __awaiter(this, void 0, void 0, function* () {
             let result = yield dbconnection_1.knex
-                .column('Cedula', 'Nombre', 'SegundoNombre', 'Apellido', 'SegundoApellido', 'Genero', 'TipoPersona')
+                .column('Cedula', 'Nombre', 'SegundoNombre', 'Apellido', 'SegundoApellido', 'Genero', 'TipoPersona').where({
+                TipoPersona: personType
+            })
                 .select()
-                .from('Persona')
-                .map(function (row) {
-                return dbNamesToPerson(row);
+                .from('Persona');
+            result.map(function (row) {
+                let p = new person_1.Person();
+                p.fromDBNames(row);
+                return p;
             });
             return result;
         });
     }
+    update(person, transaction) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                yield dbconnection_1.knex
+                    .where({
+                    Cedula: person.id,
+                    TipoPersona: person.personType
+                })
+                    .update(person.toDBNames())
+                    .transacting(transaction);
+            }
+            catch (err) {
+                throw err;
+            }
+        });
+    }
+    insert(person, transaction) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                yield dbconnection_1.knex('Persona')
+                    .insert(person.toDBNames())
+                    .transacting(transaction);
+            }
+            catch (err) {
+                throw err;
+            }
+        });
+    }
 }
 exports.PersonDB = PersonDB;
-function dbNamesToPerson(dbResult) {
-    let p = new person_1.Person();
-    p.id = dbResult.Cedula;
-    p.firstName = dbResult.Nombre;
-    p.secondName = dbResult.SegundoNombre;
-    p.lastName = dbResult.Apellido;
-    p.secondLastName = dbResult.SegundoApellido;
-    p.gender = dbResult.genero;
-    p.personType = dbResult.TipoPersona;
-    return p;
-}
 //# sourceMappingURL=personDB.js.map
