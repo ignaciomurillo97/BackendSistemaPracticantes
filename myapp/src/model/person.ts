@@ -1,8 +1,3 @@
-import { University } from './university'
-import { Site } from './site'
-import { School } from './school'
-import { Career } from './career'
-
 class Person
 {
     get id (): number {
