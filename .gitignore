@@ -71,3 +71,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+# typescript compilated files
+**/myapp/dist

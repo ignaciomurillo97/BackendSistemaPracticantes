@@ -56,13 +56,13 @@ class Person
     this._personType = value;
   }
 
-  protected _id: number;
-  protected _firstName: string;
-  protected _secondName: string;
-  protected _lastName: string;
-  protected _secondLastName: string;
-  protected _gender: string;
-  protected _personType: number;
+  protected _id:              number;
+  protected _firstName:       string;
+  protected _secondName:      string;
+  protected _lastName:        string;
+  protected _secondLastName:  string;
+  protected _gender:          string;
+  protected _personType:      number;
 
   constructor(){
 
@@ -80,13 +80,13 @@ class Person
 
   toDBNames () : Object {
     return {
-      Cedula: this.id,
-      Nombre: this.firstName,
-      SegundoNombre: this.secondName,
-      Apellido: this.lastName,
-      SegundoApellido: this.secondLastName,
-      genero: this.gender,
-      TipoPersona: this.personType
+      Cedula:           this._id,
+      Nombre:           this._firstName,
+      SegundoNombre:    this._secondName,
+      Apellido:         this._lastName,
+      SegundoApellido:  this._secondLastName,
+      genero:           this._gender,
+      TipoPersona:      this._personType
     }
   }
 

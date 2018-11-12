@@ -1,7 +1,7 @@
 import { User } from '../model/user'
 import { knex } from './dbconnection'
 
-class PersonDB {
+class UserDB {
   constructor() {
 
   }
@@ -22,4 +22,17 @@ class PersonDB {
       } );
     return result;
   }
+
+  async insert (user: User, transaction: any) {
+    try {
+      await transaction('Usuario')
+        .insert(
+          user.toDBNames()
+        )
+    } catch (err) {
+      throw err;
+    }
+  }
 }
+
+export { UserDB }

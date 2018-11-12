@@ -10,6 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const dbconnection_1 = require("../db/dbconnection");
 const administratorDB_1 = require("../db/administratorDB");
+const userDB_1 = require("../db/userDB");
+const emailDB_1 = require("../db/emailDB");
+const telephoneDB_1 = require("../db/telephoneDB");
 class AdministratorBusiness {
     constructor() {
     }
@@ -20,17 +23,23 @@ class AdministratorBusiness {
         let result = promise;
         return result;
     }
-    createAdministrator(admin) {
+    createAdministrator(admin, user, emailList, telephoneList) {
         return __awaiter(this, void 0, void 0, function* () {
             let adminDB = new administratorDB_1.AdministratorDB();
+            let userDB = new userDB_1.UserDB();
+            let emailDB = new emailDB_1.EmailDB();
+            let telephoneDB = new telephoneDB_1.TelephoneNumberDB();
             return new Promise(function (resolve, reject) {
                 dbconnection_1.knex.transaction((trx) => __awaiter(this, void 0, void 0, function* () {
                     try {
                         // Crear Persona
                         yield adminDB.insert(admin, trx);
                         // Crear Usuario
-                        // Telefonos
+                        yield userDB.insert(user, trx);
+                        // 
+                        yield emailDB.insert(emailList, trx);
                         // Correos
+                        yield telephoneDB.insert(telephoneList, trx);
                         resolve();
                     }
                     catch (err) {

@@ -4,6 +4,7 @@ import { Request, Response } from 'express'
 import {LoginBusiness} from "../business/loginBusiness";
 import {User} from "../model/user";
 import {LoginToken} from "../model/loginToken";
+import {Student} from "../model/student";
 
 
 const loginBusiness = new LoginBusiness();
@@ -20,7 +21,9 @@ router.route('/').post((req: Request, res: Response) => {
     });
 });
 
-router.route('/studentRegister').post(( req: Request, res:Response)=>{
+router.route('/studentRegister').post(( req: Request, res: Response)=>{
+    let student = new Student();
+
 
 });
 

@@ -73,7 +73,8 @@ class Student extends Person {
 
     fromDBNames(dbNames: any){
         let personInformation = super.fromDBNames(dbNames);
-        
+
+
     }
 
 

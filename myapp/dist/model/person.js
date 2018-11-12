@@ -56,13 +56,13 @@ class Person {
     }
     toDBNames() {
         return {
-            Cedula: this.id,
-            Nombre: this.firstName,
-            SegundoNombre: this.secondName,
-            Apellido: this.lastName,
-            SegundoApellido: this.secondLastName,
-            genero: this.gender,
-            TipoPersona: this.personType
+            Cedula: this._id,
+            Nombre: this._firstName,
+            SegundoNombre: this._secondName,
+            Apellido: this._lastName,
+            SegundoApellido: this._secondLastName,
+            genero: this._gender,
+            TipoPersona: this._personType
         };
     }
 }

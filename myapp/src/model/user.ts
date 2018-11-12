@@ -11,9 +11,11 @@ class User {
         return this._username;
     }
 
+
     set username(value: string) {
         this._username = value;
     }
+
 
     get passwordHash(): string {
         return this._passwordHash;
@@ -22,6 +24,7 @@ class User {
     set passwordHash(value: string) {
         this._passwordHash = value;
     }
+
 
 
   private _id: number;
