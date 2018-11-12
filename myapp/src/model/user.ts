@@ -31,6 +31,20 @@ class User {
   constructor () {
 
   }
+
+  fromDBNames(dbResult: any) {
+    this.id = dbResult.Cedula;
+    this.username = dbResult.NombreUsuario;
+    this.passwordHash = dbResult.Contrasena;
+  }
+
+  toDBNames () : Object {
+    return {
+      Cedula: this.id,
+      NombreUsuario: this.username,
+      Contrasena: this.passwordHash,
+    }
+  }
 }
 
 export { User }

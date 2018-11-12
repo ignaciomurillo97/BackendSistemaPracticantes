@@ -22,7 +22,7 @@ router.route('/')
     .post((req, res) => __awaiter(this, void 0, void 0, function* () {
     let admin = new administrator_1.Administrator();
     let adminBusiness = new administratorBusiness_1.AdministratorBusiness();
-    admin.fromDBResult(req.body.Administrator);
+    admin.fromDBNames(req.body.Administrator);
     adminBusiness.createAdministrator(admin)
         .then(function () {
         res.send({ success: "success" });

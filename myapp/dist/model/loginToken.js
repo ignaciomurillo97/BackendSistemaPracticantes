@@ -33,6 +33,12 @@ class LoginToken {
     }
     constructor() {
     }
+    fromDBNames(dbName) {
+        this.id = dbName.Cedula;
+        this.personType = dbName.TipoPersona;
+        this.username = dbName.NombreUsuario;
+        this.password = dbName.Contrasena;
+    }
 }
 exports.LoginToken = LoginToken;
 //# sourceMappingURL=loginToken.js.map

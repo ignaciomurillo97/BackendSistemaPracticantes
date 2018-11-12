@@ -49,6 +49,13 @@ class LoginToken {
     constructor () {
     }
 
+    fromDBNames(dbName: any){
+        this.id = dbName.Cedula;
+        this.personType = dbName.TipoPersona;
+        this.username = dbName.NombreUsuario;
+        this.password = dbName.Contrasena;
+    }
+
 
 }
 

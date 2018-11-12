@@ -8,51 +8,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const administrator_1 = require("../model/administrator");
-const dbconnection_1 = require("./dbconnection");
-class AdministratorDB {
+const personDB_1 = require("../db/personDB");
+class AdministratorDB extends personDB_1.PersonDB {
     constructor() {
-        this._tipe = 3;
+        super();
+        this._personType = 3;
     }
     select() {
+        const _super = name => super[name];
         return __awaiter(this, void 0, void 0, function* () {
-            let result = yield dbconnection_1.knex
-                .column('Cedula', 'Nombre', 'SegundoNombre', 'Apellido', 'SegundoApellido', 'Genero', 'TipoPersona').where({
-                TipoPersona: this._tipe
-            })
-                .select()
-                .from('Persona');
-            result.map(function (row) {
-                let admin = new administrator_1.Administrator();
-                admin.fromDBResult(row);
-                return admin;
-            });
-            return result;
+            return _super("selectType").call(this, this._personType);
         });
     }
     update(admin, transaction) {
-        try {
-            dbconnection_1.knex
-                .where({
-                Cedula: admin.id,
-                TipoPersona: this._tipe
-            })
-                .update(admin.toDBNames())
-                .transacting(transaction);
-        }
-        catch (err) {
-            throw err;
-        }
+        const _super = name => super[name];
+        return __awaiter(this, void 0, void 0, function* () {
+            yield _super("update").call(this, admin, transaction);
+        });
     }
     insert(admin, transaction) {
+        const _super = name => super[name];
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                yield dbconnection_1.knex('Persona')
-                    .insert(admin.toDBNames());
-            }
-            catch (err) {
-                throw err;
-            }
+            yield _super("insert").call(this, admin, transaction);
         });
     }
 }

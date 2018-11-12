@@ -56,26 +56,26 @@ class Person
     this._personType = value;
   }
 
-  private _id: number;
-  private _firstName: string;
-  private _secondName: string;
-  private _lastName: string;
-  private _secondLastName: string;
-  private _gender: string;
-  private _personType: number;
+  protected _id: number;
+  protected _firstName: string;
+  protected _secondName: string;
+  protected _lastName: string;
+  protected _secondLastName: string;
+  protected _gender: string;
+  protected _personType: number;
 
   constructor(){
 
   }
 
-  fromDBResult(dbResult: any) {
-    this.id             = dbResult.Cedula;
-    this.firstName      = dbResult.Nombre;
-    this.secondName     = dbResult.SegundoNombre;
-    this.lastName       = dbResult.Apellido;
-    this.secondLastName = dbResult.SegundoApellido;
-    this.gender         = dbResult.genero;
-    this.personType     = dbResult.TipoPersona;
+  fromDBNames(dbName: any) {
+    this.id             = dbName.Cedula;
+    this.firstName      = dbName.Nombre;
+    this.secondName     = dbName.SegundoNombre;
+    this.lastName       = dbName.Apellido;
+    this.secondLastName = dbName.SegundoApellido;
+    this.gender         = dbName.genero;
+    this.personType     = dbName.TipoPersona;
   }
 
   toDBNames () : Object {

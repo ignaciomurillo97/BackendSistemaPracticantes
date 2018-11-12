@@ -1,37 +1,29 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const dbconnection_1 = require("./dbconnection");
+const dbconnection_1 = require("../db/dbconnection");
 const loginToken_1 = require("../model/loginToken");
 class LoginDB {
     authenticate(user) {
-        this.query = `                
-        select 
-            u.nombreUsuario,
-            u.contrasena,
-            p.tipoPersona,
-            p.cedula
-        from persona p
-        inner join usuario u on p.cedula = u.cedula     
-        where u.nombreUsuario = '${user.username}'      
-        `;
-        return new Promise(((resolve, reject) => {
-            dbconnection_1.DBConnection.query(this.query, (err, results, fields) => {
-                let loginToken = new loginToken_1.LoginToken();
-                if (err)
-                    reject(err);
-                else if (results.length > 0) {
-                    loginToken.errorMessage = '';
-                    loginToken.password = results[0]['contrasena'];
-                    loginToken.personType = results[0]['tipoPersona'];
-                    loginToken.username = results[0]['nombreUsuario'];
-                    loginToken.id = results[0]['cedula'];
-                }
-                else {
-                    loginToken.errorMessage = 'No existe el usuario';
-                }
-                resolve(loginToken);
+        return __awaiter(this, void 0, void 0, function* () {
+            let result = yield dbconnection_1.knex
+                .select('Usuario.NombreUsuario', 'Usuario.Contrasena', 'Persona.Cedula', 'Persona.TipoPersona').from('Usuario')
+                .innerJoin('Persona', 'Usuario.Cedula', 'Persona.Cedula').where({
+                nombreUsuario: user.username
             });
-        }));
+            let loginToken = new loginToken_1.LoginToken();
+            if (result.length > 0) {
+                loginToken.fromDBNames(result[0]);
+            }
+            return loginToken;
+        });
     }
 }
 exports.LoginDB = LoginDB;

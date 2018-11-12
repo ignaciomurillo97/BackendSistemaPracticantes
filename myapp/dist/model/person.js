@@ -45,14 +45,14 @@ class Person {
     }
     constructor() {
     }
-    fromDBResult(dbResult) {
-        this.id = dbResult.Cedula;
-        this.firstName = dbResult.Nombre;
-        this.secondName = dbResult.SegundoNombre;
-        this.lastName = dbResult.Apellido;
-        this.secondLastName = dbResult.SegundoApellido;
-        this.gender = dbResult.genero;
-        this.personType = dbResult.TipoPersona;
+    fromDBNames(dbName) {
+        this.id = dbName.Cedula;
+        this.firstName = dbName.Nombre;
+        this.secondName = dbName.SegundoNombre;
+        this.lastName = dbName.Apellido;
+        this.secondLastName = dbName.SegundoApellido;
+        this.gender = dbName.genero;
+        this.personType = dbName.TipoPersona;
     }
     toDBNames() {
         return {

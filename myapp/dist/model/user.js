@@ -21,6 +21,18 @@ class User {
     }
     constructor() {
     }
+    fromDBNames(dbResult) {
+        this.id = dbResult.Cedula;
+        this.username = dbResult.NombreUsuario;
+        this.passwordHash = dbResult.Contrasena;
+    }
+    toDBNames() {
+        return {
+            Cedula: this.id,
+            NombreUsuario: this.username,
+            Contrasena: this.passwordHash,
+        };
+    }
 }
 exports.User = User;
 //# sourceMappingURL=user.js.map

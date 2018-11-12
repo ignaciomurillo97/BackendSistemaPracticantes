@@ -1,4 +1,4 @@
-import { DBConnection } from "./dbconnection";
+import { knex } from '../db/dbconnection'
 import {User} from "../model/user";
 import {LoginToken} from "../model/loginToken";
 import {log} from "util";
@@ -7,40 +7,29 @@ class LoginDB {
 
     private query: string;
 
-    authenticate(user: User): Promise<LoginToken>{
-        this.query = `                
-        select 
-            u.nombreUsuario,
-            u.contrasena,
-            p.tipoPersona,
-            p.cedula
-        from persona p
-        inner join usuario u on p.cedula = u.cedula     
-        where u.nombreUsuario = '${user.username}'      
-        `;
-        return new Promise<LoginToken>(((resolve, reject) => {
-            DBConnection.query(this.query, (err, results, fields) => {
+    async authenticate(user: User): Promise<LoginToken>{
+        let result = await knex
+            .select(
+                'Usuario.NombreUsuario',
+                'Usuario.Contrasena',
+                'Persona.Cedula',
+                'Persona.TipoPersona'
+            ).from('Usuario')
+            .innerJoin(
+                'Persona',
+                'Usuario.Cedula',
+                'Persona.Cedula'
+            ).where({
+                nombreUsuario: user.username
+            });
 
-                let loginToken: LoginToken = new LoginToken();
+        let loginToken: LoginToken = new LoginToken();
+        if(result.length > 0){
+            loginToken.fromDBNames(result[0]);
+        }
 
-                if(err) reject(err);
+        return loginToken;
 
-                else if(results.length > 0){
-
-                    loginToken.errorMessage = '';
-                    loginToken.password = results[0]['contrasena'];
-                    loginToken.personType = results[0]['tipoPersona'];
-                    loginToken.username = results[0]['nombreUsuario'];
-                    loginToken.id = results[0]['cedula'];
-
-                }
-
-                else {
-                    loginToken.errorMessage = 'No existe el usuario';
-                }
-                resolve(loginToken);
-            })
-        }))
     }
 }
 
