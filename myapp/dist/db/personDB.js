@@ -37,8 +37,7 @@ class PersonDB {
                     Cedula: person.id,
                     TipoPersona: person.personType
                 })
-                    .update(person.toDBNames())
-                    .transacting(transaction);
+                    .update(person.toDBNames());
             }
             catch (err) {
                 throw err;
@@ -48,9 +47,8 @@ class PersonDB {
     insert(person, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                yield dbconnection_1.knex('Persona')
-                    .insert(person.toDBNames())
-                    .transacting(transaction);
+                yield transaction('Persona')
+                    .insert(person.toDBNames());
             }
             catch (err) {
                 throw err;

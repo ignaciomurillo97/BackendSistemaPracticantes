@@ -9,7 +9,7 @@ class User {
   }
 
   get username (): string {
-    return this.username;
+    return this._username;
   }
 
   set username (value: string) {
@@ -17,7 +17,7 @@ class User {
   }
 
   get passwordHash (): string {
-    return this.passwordHash;
+    return this._passwordHash;
   }
 
   set passwordHash (value: string) {

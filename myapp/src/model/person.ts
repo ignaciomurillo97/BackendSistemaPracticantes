@@ -74,7 +74,6 @@ class Person
   }
 
   fromDBNames(dbName: any) {
-    console.log(dbName);
     this.id             = dbName.Cedula;
     this.firstName      = dbName.Nombre;
     this.secondName     = dbName.SegundoNombre;

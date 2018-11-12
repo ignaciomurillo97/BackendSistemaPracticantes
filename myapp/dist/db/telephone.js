@@ -8,30 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_1 = require("../model/user");
-const dbconnection_1 = require("./dbconnection");
-class UserDB {
+class EmailDB {
     constructor() {
     }
-    select() {
+    insert(email, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
-            let result = yield dbconnection_1.knex
-                .column('Cedula', 'NombreUsuario', 'Contrasena')
-                .select()
-                .from('Usuario')
-                .map(function (row) {
-                let user = new user_1.User();
-                user.fromDBNames(row);
-                return user;
+            let emailListDBNames;
+            emailListDBNames = email.map((obj) => {
+                return obj.toDBNames();
             });
-            return result;
-        });
-    }
-    insert(user, transaction) {
-        return __awaiter(this, void 0, void 0, function* () {
+            console.log(emailListDBNames);
             try {
-                yield transaction('Usuario')
-                    .insert(user.toDBNames());
+                yield transaction('DireccionCorreoElectronico')
+                    .insert(emailListDBNames);
             }
             catch (err) {
                 throw err;
@@ -39,5 +28,5 @@ class UserDB {
         });
     }
 }
-exports.UserDB = UserDB;
-//# sourceMappingURL=userDB.js.map
+exports.EmailDB = EmailDB;
+//# sourceMappingURL=telephone.js.map

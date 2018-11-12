@@ -42,7 +42,6 @@ class PersonDB {
         .update( 
           person.toDBNames()
         )
-        .transacting(transaction);
     } catch (err) {
       throw err;
     }
@@ -51,11 +50,10 @@ class PersonDB {
 
   protected async insert (person: Person, transaction: any) {
     try {
-      await knex('Persona')
+      await transaction('Persona')
         .insert(
           person.toDBNames()
         )
-        .transacting(transaction);
     } catch (err) {
       throw err;
     }

@@ -8,13 +8,13 @@ class User {
         this._id = value;
     }
     get username() {
-        return this.username;
+        return this._username;
     }
     set username(value) {
         this._username = value;
     }
     get passwordHash() {
-        return this.passwordHash;
+        return this._passwordHash;
     }
     set passwordHash(value) {
         this._passwordHash = value;
