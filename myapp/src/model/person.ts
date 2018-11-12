@@ -57,41 +57,37 @@ class Person
     return this._personType;
   }
 
-  set personType (value: number) {
-    this._personType = value;
-  }
-
-  private _id: number;
-  private _firstName: string;
-  private _secondName: string;
-  private _lastName: string;
-  private _secondLastName: string;
-  private _gender: string;
-  private _personType: number;
+  protected _id:              number;
+  protected _firstName:       string;
+  protected _secondName:      string;
+  protected _lastName:        string;
+  protected _secondLastName:  string;
+  protected _gender:          string;
+  protected _personType:      number;
 
   constructor(){
 
   }
 
   fromDBNames(dbName: any) {
-    this.id             = dbName.Cedula;
-    this.firstName      = dbName.Nombre;
-    this.secondName     = dbName.SegundoNombre;
-    this.lastName       = dbName.Apellido;
-    this.secondLastName = dbName.SegundoApellido;
-    this.gender         = dbName.genero;
-    this.personType     = dbName.TipoPersona;
+    this._id             = dbName.Cedula;
+    this._firstName      = dbName.Nombre;
+    this._secondName     = dbName.SegundoNombre;
+    this._lastName       = dbName.Apellido;
+    this._secondLastName = dbName.SegundoApellido;
+    this._gender         = dbName.genero;
+    this._personType     = dbName.TipoPersona;
   }
 
   toDBNames () : Object {
     return {
-      Cedula: this.id,
-      Nombre: this.firstName,
-      SegundoNombre: this.secondName,
-      Apellido: this.lastName,
-      SegundoApellido: this.secondLastName,
-      genero: this.gender,
-      TipoPersona: this.personType
+      Cedula:           this._id,
+      Nombre:           this._firstName,
+      SegundoNombre:    this._secondName,
+      Apellido:         this._lastName,
+      SegundoApellido:  this._secondLastName,
+      genero:           this._gender,
+      TipoPersona:      this._personType
     }
   }
 
