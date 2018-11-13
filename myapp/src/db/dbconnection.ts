@@ -9,5 +9,5 @@ var knexConf = knex({
     database : 'SistemaPracticantes'
   },
   pool: { min: 0, max: 7 }
-})
+});
 export { knexConf as knex }

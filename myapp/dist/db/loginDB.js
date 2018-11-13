@@ -8,22 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const bcriptjs = require("bcryptjs");
-const loginDB_1 = require("../db/loginDB");
-class LoginBusiness {
-    constructor() {
-        this.loginDB = new loginDB_1.LoginDB();
-    }
+const dbconnection_1 = require("../db/dbconnection");
+const loginToken_1 = require("../model/loginToken");
+class LoginDB {
     authenticate(user) {
         return __awaiter(this, void 0, void 0, function* () {
-            let loginToken = yield this.loginDB.authenticate(user);
-            //in case the user doesn't exist or the password is incorrect
-            if (Object.keys(loginToken).length === 0 || !bcriptjs.compareSync(user.passwordHash, loginToken.password)) {
-                loginToken.errorMessage = 'El usuario o contraseña son incorrectos';
+            let result = yield dbconnection_1.knex
+                .select('Usuario.NombreUsuario', 'Usuario.Contrasena', 'Persona.Cedula', 'Persona.TipoPersona').from('Usuario')
+                .innerJoin('Persona', 'Usuario.Cedula', 'Persona.Cedula').where({
+                nombreUsuario: user.username
+            });
+            let loginToken = new loginToken_1.LoginToken();
+            if (result.length > 0) {
+                loginToken.fromDBNames(result[0]);
             }
             return loginToken;
         });
     }
 }
-exports.LoginBusiness = LoginBusiness;
-//# sourceMappingURL=loginBusiness.js.map
+exports.LoginDB = LoginDB;
+//# sourceMappingURL=loginDB.js.map

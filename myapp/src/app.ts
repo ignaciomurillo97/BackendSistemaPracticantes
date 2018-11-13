@@ -7,6 +7,7 @@ import { router as administratorRouter} from './routes/administrator';
 import { router as companyRouter} from './routes/company';
 import { router as coordinatorRouter} from './routes/coordinator';
 import { router as studentRouter} from './routes/student';
+import { router as loginRouter } from "./routes/login";
 
 
 // Our Express APP config
@@ -29,6 +30,7 @@ app.use('/administrator', administratorRouter );
 app.use('/company', companyRouter );
 app.use('/coordinator', coordinatorRouter );
 app.use('/student', studentRouter );
+app.use('/login', loginRouter );
 
 
 

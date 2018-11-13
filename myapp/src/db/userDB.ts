@@ -19,7 +19,7 @@ class UserDB {
         let user: User = new User();
         user.fromDBNames(row);
         return user;
-      } )
+      } );
     return result;
   }
 

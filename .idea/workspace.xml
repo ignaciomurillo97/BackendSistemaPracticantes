@@ -2,11 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988c07f5-a92d-4833-a229-5616122f570d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myapp/dist/business/careerBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/business/careerBusiness.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/CareerDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/CareerDB.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/correoDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/correoDB.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/emailDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/emailDB.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/telephone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/telephone.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/telephoneDB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/db/telephoneDB.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/email.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/email.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/genderCatalog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/genderCatalog.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/telephoneNumber.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/telephoneNumber.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/userBusiness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/dist/model/userBusiness.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/business/careerBusiness.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/db/careerDB.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/db/emailDB.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/db/telephoneDB.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/model/email.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/model/telephoneNumber.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myapp/src/model/userBusiness.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/business/userBusiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/business/userBusiness.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/db/userDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/db/userDB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/model/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_files/SistemaPracticantes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_files/SistemaPracticantes.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/business/administratorBusiness.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/business/administratorBusiness.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/business/administratorBusiness.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/business/administratorBusiness.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/db/personDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/db/personDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/db/personDB.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/db/personDB.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/db/userDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/db/userDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/db/userDB.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/db/userDB.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/University.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/University.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/University.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/University.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/administrator.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/administrator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/administrator.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/administrator.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/career.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/career.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/career.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/career.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/person.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/person.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/person.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/person.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/student.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/student.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/model/user.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/model/user.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/routes/administrator.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/routes/administrator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/routes/administrator.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/routes/administrator.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/dist/routes/login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/dist/routes/login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/business/administratorBusiness.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/business/administratorBusiness.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/db/personDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/db/personDB.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/db/userDB.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/db/userDB.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/model/administrator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/model/administrator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/model/career.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/model/career.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/model/person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/model/person.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/model/student.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/model/student.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/model/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/model/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/routes/administrator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/routes/administrator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/routes/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myapp/src/routes/login.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,41 +76,56 @@
     <session id="2143221362">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="54" />
-          <entry key="json" value="3" />
+          <entry key="gitignore" value="1" />
+          <entry key="js" value="65" />
+          <entry key="json" value="5" />
           <entry key="sql" value="2" />
+          <entry key="ts" value="39" />
           <entry key="www" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="59" />
+          <entry key="JSON" value="5" />
+          <entry key="JavaScript" value="70" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="2" />
+          <entry key="TypeScript" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="2180" />
+          <entry key="dummy" value="2" />
+          <entry key="gitignore" value="49" />
+          <entry key="js" value="2182" />
           <entry key="json" value="16" />
+          <entry key="ts" value="3146" />
           <entry key="www" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="2185" />
+          <entry key="JavaScript" value="2187" />
+          <entry key="PLAIN_TEXT" value="51" />
+          <entry key="TypeScript" value="3146" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -63,28 +133,84 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/db/userDB.js">
+        <entry file="file://$PROJECT_DIR$/myapp/src/routes/login.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="455">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="n#express#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/routes/login.js">
+        <entry file="file://$PROJECT_DIR$/myapp/src/business/loginBusiness.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="367">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding>
+                <element signature="n#bcriptjs#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/src/model/student.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+            <state relative-caret-position="588">
+              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/src/model/person.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/src/model/user.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/src/db/loginDB.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/src/db/administratorDB.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +221,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -103,10 +230,12 @@
       <find>render</find>
       <find>var</find>
       <find>studentInfo</find>
+      <find>private</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
       <replace>student</replace>
+      <replace>protected</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -127,10 +256,24 @@
         <option value="$PROJECT_DIR$/myapp/routes/student.js" />
         <option value="$PROJECT_DIR$/myapp/db/personDB.js" />
         <option value="$PROJECT_DIR$/myapp/business/studentBusiness.js" />
-        <option value="$PROJECT_DIR$/myapp/model/user.js" />
         <option value="$PROJECT_DIR$/myapp/db/userDB.js" />
         <option value="$PROJECT_DIR$/myapp/routes/login.js" />
         <option value="$PROJECT_DIR$/myapp/business/userBusiness.js" />
+        <option value="$PROJECT_DIR$/myapp/routes/professor.js" />
+        <option value="$PROJECT_DIR$/myapp/model/user.js" />
+        <option value="$PROJECT_DIR$/myapp/src/app.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/db/dbconnection.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/db/personDB.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/db/userDB.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/model/loginToken.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/db/loginDB.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/model/JSONConverter.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/business/loginBusiness.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/model/person.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/model/user.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/routes/login.ts" />
+        <option value="$PROJECT_DIR$/myapp/src/model/student.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -182,41 +325,40 @@
             <path>
               <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
               <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
-              <item name="db_files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
               <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
               <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="business" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
               <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
               <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BackendSistemaPracticantes" type="b2602c69:ProjectViewProjectNode" />
               <item name="BackendSistemaPracticantes" type="462c0819:PsiDirectoryNode" />
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -242,9 +384,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alv-c\Desktop\Github\BackendSistemaPracticantes\myapp\src\model" />
       <recent name="C:\Users\alv-c\Desktop\Github\BackendSistemaPracticantes\myapp\db" />
     </key>
   </component>
@@ -275,20 +420,22 @@
       <workItem from="1539184165541" duration="165000" />
       <workItem from="1539483997588" duration="14000" />
       <workItem from="1539723381725" duration="112000" />
-      <workItem from="1539723575138" duration="11374000" />
+      <workItem from="1539723575138" duration="14791000" />
+      <workItem from="1541888580588" duration="25877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24639000" />
+    <option name="totallyTimeSpent" value="53933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16325182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16325182" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" weight="0.32885906" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
@@ -298,27 +445,28 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16325182" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32885906" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32885906" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.32885906" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32885906" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32885906" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -345,13 +493,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/model/person/user.js" />
-    <entry file="file://$PROJECT_DIR$/myapp/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="63" column="2" lean-forward="true" selection-start-line="63" selection-start-column="2" selection-end-line="63" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -366,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myapp/db/schoolDB.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -382,9 +516,6 @@
           <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/db/coordinatorDB.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/db/careersDB.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -444,10 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/model/user.js">
+    <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        <state relative-caret-position="144">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
@@ -465,10 +596,203 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/business/userBusiness.js">
+    <entry file="file://$PROJECT_DIR$/myapp/db/coordinatorDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        <state relative-caret-position="-618" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/model/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/routes/company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/business/coordinatorBusiness.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/business/professorBusiness.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/routes/professor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/personType.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/companyState.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/db/person.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/routes/administrator.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="13" lean-forward="true" selection-end-line="15" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/activity.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-956" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/db/dbconnection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/coordinator.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/JSONConverter.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/loginToken.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-689">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/business/loginBusiness.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="n#bcriptjs#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/db/userDB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/db/personDB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/db/administratorDB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/db/loginDB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/routes/login.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/business/administratorBusiness.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/person.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/src/model/student.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
         </state>
       </provider>
     </entry>

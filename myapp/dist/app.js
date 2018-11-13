@@ -8,6 +8,7 @@ const administrator_1 = require("./routes/administrator");
 const company_1 = require("./routes/company");
 const coordinator_1 = require("./routes/coordinator");
 const student_1 = require("./routes/student");
+const login_1 = require("./routes/login");
 // Our Express APP config
 const app = express();
 app.set("port", process.env.PORT || 3000);
@@ -24,6 +25,7 @@ app.use('/administrator', administrator_1.router);
 app.use('/company', company_1.router);
 app.use('/coordinator', coordinator_1.router);
 app.use('/student', student_1.router);
+app.use('/login', login_1.router);
 // export our app
 exports.default = app;
 //# sourceMappingURL=app.js.map

@@ -14,4 +14,4 @@ class GenderCatalog {
     constructor() {
     }
 }
-//# sourceMappingURL=GenderCatalog.js.map
+//# sourceMappingURL=genderCatalog.js.map

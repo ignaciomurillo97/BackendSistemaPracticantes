@@ -1,8 +1,3 @@
-import { University } from './university'
-import { Site } from './site' 
-import { School } from './school'
-import { Career } from './career'
-
 class Person
 {
   get id (): number {
@@ -57,6 +52,10 @@ class Person
     return this._personType;
   }
 
+  set personType (value: number) {
+    this._personType = value;
+  }
+
   protected _id:              number;
   protected _firstName:       string;
   protected _secondName:      string;
@@ -70,13 +69,13 @@ class Person
   }
 
   fromDBNames(dbName: any) {
-    this._id             = dbName.Cedula;
-    this._firstName      = dbName.Nombre;
-    this._secondName     = dbName.SegundoNombre;
-    this._lastName       = dbName.Apellido;
-    this._secondLastName = dbName.SegundoApellido;
-    this._gender         = dbName.genero;
-    this._personType     = dbName.TipoPersona;
+    this.id             = dbName.Cedula;
+    this.firstName      = dbName.Nombre;
+    this.secondName     = dbName.SegundoNombre;
+    this.lastName       = dbName.Apellido;
+    this.secondLastName = dbName.SegundoApellido;
+    this.gender         = dbName.genero;
+    this.personType     = dbName.TipoPersona;
   }
 
   toDBNames () : Object {

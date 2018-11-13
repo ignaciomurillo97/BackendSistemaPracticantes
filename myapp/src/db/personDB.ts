@@ -21,11 +21,11 @@ class PersonDB {
       TipoPersona: personType
     })
     .select()
-    .from('Persona')
+    .from('Persona');
     
     result.map( function(row: any) {
       let p = new Person();
-      p.fromDBNames(row)
+      p.fromDBNames(row);
       return p;
     } );
 
