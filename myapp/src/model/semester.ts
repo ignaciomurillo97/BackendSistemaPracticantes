@@ -28,6 +28,32 @@ class Semester {
   private _id: number;
   private _year: number;
   private _number: number;
+
+  constructor() {
+
+  }
+
+  fromDBNames (dbNames: any) {
+    if (dbNames.IdSemestre != undefined) {
+      this._id = dbNames.IdSemestre;
+    } else {
+      this._id = -1;
+    }
+
+    this._year = dbNames.Ano;
+    this._number = dbNames.NumeroSemestre;
+  }
+
+  toDBNames () : Object {
+    let obj: any = {
+      Ano: this._year,
+      NumeroSemestre: this._number
+    }
+    if (this._id != -1) {
+      obj.IdSemestre = this._id;
+    }
+    return obj;
+  }
 }
 
 export { Semester };

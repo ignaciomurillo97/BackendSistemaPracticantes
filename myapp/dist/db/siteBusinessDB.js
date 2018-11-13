@@ -8,30 +8,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_1 = require("../model/user");
+const site_1 = require("../model/site");
 const dbconnection_1 = require("./dbconnection");
-class UserDB {
+class SiteDB {
     constructor() {
     }
     select() {
         return __awaiter(this, void 0, void 0, function* () {
             let result = yield dbconnection_1.knex
-                .column('Cedula', 'NombreUsuario', 'Contrasena')
+                .column('idSite', 'idUniversidad', 'NombreSite', 'Direccion')
                 .select()
-                .from('Usuario')
+                .from('Sede')
                 .map(function (row) {
-                let user = new user_1.User();
-                user.fromDBNames(row);
-                return user;
+                let site = new site_1.Site();
+                site.fromDBNames(row);
+                return site;
             });
             return result;
         });
     }
-    insert(user, transaction) {
+    insert(site, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                yield transaction('Usuario')
-                    .insert(user.toDBNames());
+                yield transaction('Sede')
+                    .insert(site.toDBNames());
             }
             catch (err) {
                 console.log(err);
@@ -40,5 +40,5 @@ class UserDB {
         });
     }
 }
-exports.UserDB = UserDB;
-//# sourceMappingURL=userDB.js.map
+exports.SiteDB = SiteDB;
+//# sourceMappingURL=siteBusinessDB.js.map

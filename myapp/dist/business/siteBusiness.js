@@ -9,31 +9,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dbconnection_1 = require("../db/dbconnection");
-const careerDB_1 = require("../db/careerDB");
-class CareerBusiness {
+const siteDB_1 = require("../db/siteDB");
+class SiteBusiness {
     constructor() {
     }
-    selectCareers() {
+    selectSite() {
         let promise;
-        let careerDB = new careerDB_1.CareerDB();
-        promise = careerDB.select();
+        let siteDB = new siteDB_1.SiteDB();
+        promise = siteDB.select();
         return promise;
     }
-    createCareer(career) {
-        let careerDB = new careerDB_1.CareerDB();
+    createSite(site) {
+        let siteDB = new siteDB_1.SiteDB();
         return new Promise(function (resolve, reject) {
             dbconnection_1.knex.transaction((trx) => __awaiter(this, void 0, void 0, function* () {
                 try {
-                    yield careerDB.insert(career, trx);
+                    yield siteDB.insert(site, trx);
                     resolve();
                 }
                 catch (err) {
-                    console.error(err);
                     reject(err);
                 }
             }));
         });
     }
 }
-exports.CareerBusiness = CareerBusiness;
-//# sourceMappingURL=careerBusiness.js.map
+exports.SiteBusiness = SiteBusiness;
+//# sourceMappingURL=siteBusiness.js.map

@@ -9,22 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dbconnection_1 = require("../db/dbconnection");
-const careerDB_1 = require("../db/careerDB");
-class CareerBusiness {
+const schoolDB_1 = require("../db/schoolDB");
+class SchoolBusiness {
     constructor() {
     }
-    selectCareers() {
+    selectSchools() {
         let promise;
-        let careerDB = new careerDB_1.CareerDB();
-        promise = careerDB.select();
+        let schoolDB = new schoolDB_1.SchoolDB();
+        promise = schoolDB.select();
         return promise;
     }
-    createCareer(career) {
-        let careerDB = new careerDB_1.CareerDB();
+    createSchool(school) {
+        let schoolDB = new schoolDB_1.SchoolDB();
         return new Promise(function (resolve, reject) {
             dbconnection_1.knex.transaction((trx) => __awaiter(this, void 0, void 0, function* () {
                 try {
-                    yield careerDB.insert(career, trx);
+                    yield schoolDB.insert(school, trx);
                     resolve();
                 }
                 catch (err) {
@@ -35,5 +35,5 @@ class CareerBusiness {
         });
     }
 }
-exports.CareerBusiness = CareerBusiness;
-//# sourceMappingURL=careerBusiness.js.map
+exports.SchoolBusiness = SchoolBusiness;
+//# sourceMappingURL=schoolBusiness.js.map

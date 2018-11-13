@@ -8,30 +8,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_1 = require("../model/user");
+const school_1 = require("../model/school");
 const dbconnection_1 = require("./dbconnection");
-class UserDB {
+class SchoolDB {
     constructor() {
     }
     select() {
         return __awaiter(this, void 0, void 0, function* () {
             let result = yield dbconnection_1.knex
-                .column('Cedula', 'NombreUsuario', 'Contrasena')
+                .column('IdEscuela', 'IdUniversidad', 'NombreEscuela')
                 .select()
-                .from('Usuario')
+                .from('Escuela')
                 .map(function (row) {
-                let user = new user_1.User();
-                user.fromDBNames(row);
-                return user;
+                let school = new school_1.School();
+                school.fromDBNames(row);
+                return school;
             });
             return result;
         });
     }
-    insert(user, transaction) {
+    insert(school, transaction) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                yield transaction('Usuario')
-                    .insert(user.toDBNames());
+                yield transaction('Escuela')
+                    .insert(school.toDBNames());
             }
             catch (err) {
                 console.log(err);
@@ -40,5 +40,5 @@ class UserDB {
         });
     }
 }
-exports.UserDB = UserDB;
-//# sourceMappingURL=userDB.js.map
+exports.SchoolDB = SchoolDB;
+//# sourceMappingURL=schoolDB.js.map

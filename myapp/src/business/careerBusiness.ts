@@ -11,8 +11,7 @@ class CareerBusiness {
     let promise: Promise<Array<Career>>;
     let careerDB: CareerDB = new CareerDB();
     promise = careerDB.select();
-    let result = promise;
-    return result;
+    return promise;
   }
 
   createCareer (career: Career) {
@@ -23,6 +22,7 @@ class CareerBusiness {
           await careerDB.insert(career, trx);
           resolve();
         } catch (err) {
+          console.error(err);
           reject(err);
         }
       } )
